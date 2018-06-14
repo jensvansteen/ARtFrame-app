@@ -1,0 +1,23 @@
+[
+    {
+      "id": "g01",
+      "index": 0,
+      "name": "Koen",
+      "fullName": "Gids Koen: De Dummy",
+      "info": "Hij weet totaal niet veel over kunst maar weet wel altijd rake opmerkingen te geven over bepaalde kunstwerken."
+    },
+    {
+        "id": "g02",
+        "index": 1,
+        "name": "Elke",
+        "fullName": "Gids Elke: Open Minded",
+        "info": "Elke stelt zich open voor vele dingen in het leven waaronder kunst. Ze weet wel wat van kunst maar is geen expert."
+      },
+      {
+        "id": "g03",
+        "index": 2,
+        "name": "Karel",
+        "fullName": "Gids Karel: Kunstliefhebber",
+        "info": "Karel is vanaf zijn jonge jaren al met kunst bezig! Hij is een echte kenner!"
+      }
+]

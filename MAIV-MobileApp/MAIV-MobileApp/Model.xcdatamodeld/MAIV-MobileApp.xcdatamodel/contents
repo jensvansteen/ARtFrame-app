@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14135" systemVersion="17E202" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="ActiveGuide" representedClassName="ActiveGuide" syncable="YES" codeGenerationType="class">
+        <attribute name="guideId" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="ActiveTour" representedClassName="ActiveTour" syncable="YES" codeGenerationType="class">
+        <attribute name="tourId" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="PaintingChecked" representedClassName="PaintingChecked" syncable="YES" codeGenerationType="class">
+        <attribute name="paintingId" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="ActiveGuide" positionX="-18" positionY="36" width="128" height="60"/>
+        <element name="ActiveTour" positionX="0" positionY="45" width="128" height="60"/>
+        <element name="PaintingChecked" positionX="-27" positionY="18" width="128" height="60"/>
+    </elements>
+</model>

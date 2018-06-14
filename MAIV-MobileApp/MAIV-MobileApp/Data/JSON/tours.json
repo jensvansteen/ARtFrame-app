@@ -1,0 +1,65 @@
+[
+    {
+        "id": "t01",
+        "title": "Muziek Tour",
+        "img": "muziektour",
+        "text": "Een tour over muziek waar je eigen band kan vormen.",
+        "paintings": ["p00001","p00002"],
+        "completed": 3,
+        "highlighted": true
+    },
+    {
+        "id": "t02",
+        "title": "Kadinsky Tour",
+        "img": "kadinskytour",
+        "text": "Ontdek de interessanste kunstwerken van Kadinsky",
+        "paintings": ["p00001"],
+        "completed": 1,
+        "highlighted": false
+    },
+    {
+        "id": "t03",
+        "title": "Pluizenballen Tour",
+        "img": "katjestour",
+        "text": "Neem deze tour en speel met katjes",
+        "paintings": ["p00001"],
+        "completed": 2,
+        "highlighted": false
+    },
+    {
+        "id": "t04",
+        "title": "van Gogh Tour",
+        "img": "vangoghtour",
+        "text": "Een tour waar je van Gogh's oor terug moet vinden",
+        "paintings": ["p00001"],
+        "completed": 0,
+        "highlighted": false
+    },
+    {
+        "id": "t05",
+        "title": "Vogels spotten",
+        "img": "vogelstour",
+        "text": "In deze tour ga je vogels verzamelen",
+        "paintings": ["p00001"],
+        "completed": 3,
+        "highlighted": false
+    },
+    {
+        "id": "t06",
+        "title": "Heksenjacht",
+        "img": "heksentour",
+        "text": "Verzamel de heksen en vorm je eigen toverdrank op het einde",
+        "paintings": ["p00001"],
+        "completed": 4,
+        "highlighted": false
+    },
+    {
+        "id": "t07",
+        "title": "Tour de Waf",
+        "img": "hondjestour",
+        "text": "Aai, speel apport, en geef veel liefde aan bekende en minder bekende kunst honden",
+        "paintings": ["p00001"],
+        "completed": 4,
+        "highlighted": false
+    }
+]
