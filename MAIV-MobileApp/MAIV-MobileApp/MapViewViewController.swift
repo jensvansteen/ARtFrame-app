@@ -111,7 +111,7 @@ class MapViewViewController: UIViewController, MKMapViewDelegate {
             self.navigationItem.leftBarButtonItem = self.stopTourButton
             self.navigationItem.title = selectedTour?.title
         } else if inTour == false {
-            self.navigationItem.title = "Boijmans"
+            self.navigationItem.title = "ARtFrame"
             tourOrGuideButton.setImage(UIImage(named: "Tour"), for: .normal)
             tourOrGuideLabel.text = "Tour"
             self.navigationItem.leftBarButtonItem = nil
@@ -132,8 +132,6 @@ class MapViewViewController: UIViewController, MKMapViewDelegate {
     }
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        
-//        let reusableAnnotation = mapView.dequeueReusableAnnotationView(withIdentifier: "devine")
         
          let mijnView = MKAnnotationView()
          mijnView.frame = CGRect(x: 0, y: 0, width: 40, height: 40)

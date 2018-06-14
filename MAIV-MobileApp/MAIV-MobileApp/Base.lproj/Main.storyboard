@@ -48,7 +48,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v0D-Ql-Ht3">
+                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v0D-Ql-Ht3">
                                 <rect key="frame" x="36" y="599" width="32" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="32" id="8QY-eD-nx4"/>
@@ -208,7 +208,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     </arscnView>
                     <navigationItem key="navigationItem" title="Scannen" id="ZbE-kP-Sro">
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="questionButton" id="1G7-3R-fOk">
+                        <barButtonItem key="rightBarButtonItem" image="questionButton" largeContentSizeImage="questionButton" id="1G7-3R-fOk">
                             <connections>
                                 <segue destination="Y3K-s4-GxL" kind="show" id="N7p-Zk-VZW"/>
                             </connections>
@@ -1089,7 +1089,7 @@
     <resources>
         <image name="3collected" width="65" height="26"/>
         <image name="Stickers" width="181" height="242"/>
-        <image name="Tour" width="115" height="254"/>
+        <image name="Tour" width="258" height="258"/>
         <image name="backgroundGuide" width="375" height="260"/>
         <image name="closeIcon" width="16" height="16"/>
         <image name="howtoInstuction" width="222" height="222"/>

@@ -69,7 +69,7 @@
 		3330E78A20D0D5FC00B1F1BD /* PagePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagePageViewController.swift; sourceTree = "<group>"; };
 		3330E78E20D0DF6600B1F1BD /* GuideCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideCollectionViewCell.swift; sourceTree = "<group>"; };
 		335BD4D720CE6EA600DBB39E /* MAIV-MobileApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "MAIV-MobileApp.xcdatamodel"; sourceTree = "<group>"; };
-		3393E27520C7B01A0087844B /* MAIV-MobileApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MAIV-MobileApp.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3393E27520C7B01A0087844B /* ARtFrame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARtFrame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3393E27820C7B01A0087844B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3393E27A20C7B01A0087844B /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
 		3393E27F20C7B01A0087844B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -199,7 +199,7 @@
 		3393E27620C7B01A0087844B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3393E27520C7B01A0087844B /* MAIV-MobileApp.app */,
+				3393E27520C7B01A0087844B /* ARtFrame.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -248,9 +248,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		3393E27420C7B01A0087844B /* MAIV-MobileApp */ = {
+		3393E27420C7B01A0087844B /* ARtFrame */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3393E28920C7B01B0087844B /* Build configuration list for PBXNativeTarget "MAIV-MobileApp" */;
+			buildConfigurationList = 3393E28920C7B01B0087844B /* Build configuration list for PBXNativeTarget "ARtFrame" */;
 			buildPhases = (
 				16790E3A98916E1794BAC245 /* [CP] Check Pods Manifest.lock */,
 				3393E27120C7B01A0087844B /* Sources */,
@@ -262,9 +262,9 @@
 			);
 			dependencies = (
 			);
-			name = "MAIV-MobileApp";
+			name = ARtFrame;
 			productName = "MAIV-MobileApp";
-			productReference = 3393E27520C7B01A0087844B /* MAIV-MobileApp.app */;
+			productReference = 3393E27520C7B01A0087844B /* ARtFrame.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -295,7 +295,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				3393E27420C7B01A0087844B /* MAIV-MobileApp */,
+				3393E27420C7B01A0087844B /* ARtFrame */,
 			);
 		};
 /* End PBXProject section */
@@ -582,7 +582,7 @@
 				PRESERVE_DEAD_CODE_INITS_AND_TERMS = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "team7.maivApp.MAIV-MobileApp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_COMPILATION_MODE = singlefile;
+				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -600,7 +600,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3393E28920C7B01B0087844B /* Build configuration list for PBXNativeTarget "MAIV-MobileApp" */ = {
+		3393E28920C7B01B0087844B /* Build configuration list for PBXNativeTarget "ARtFrame" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3393E28A20C7B01B0087844B /* Debug */,
