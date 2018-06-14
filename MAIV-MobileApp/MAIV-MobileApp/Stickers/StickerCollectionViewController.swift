@@ -77,6 +77,8 @@ class StickerCollectionViewController: UIViewController, UICollectionViewDelegat
         catch {
             print("Fetching Failed")
         }
+        
+         setUPTopBar()
     }
     
 

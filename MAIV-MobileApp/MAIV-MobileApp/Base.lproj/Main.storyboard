@@ -23,6 +23,9 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="delegate" destination="iOL-kh-EQY" id="LKC-RF-Mge"/>
+                                </connections>
                             </mapView>
                             <view userInteractionEnabled="NO" alpha="0.10000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ER4-Is-E07">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
@@ -116,10 +119,9 @@
                                 <action selector="stopTour:" destination="iOL-kh-EQY" id="M5Y-4f-iaC"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="ro9-QP-3Nh"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="collectedIndicator" destination="ro9-QP-3Nh" id="qQ4-IZ-Vbu"/>
+                        <outlet property="rotterdamMap" destination="BtU-64-2wf" id="Zz9-64-bdx"/>
                         <outlet property="stopTourButton" destination="lNB-Bb-Uqq" id="bGH-n0-lKa"/>
                         <outlet property="tourOrGuideButton" destination="v0D-Ql-Ht3" id="mtN-GL-9AT"/>
                         <outlet property="tourOrGuideLabel" destination="qV6-Bj-SH1" id="YE8-rQ-xf9"/>
@@ -150,30 +152,16 @@
                                 <color key="textColor" red="0.97647058823529409" green="0.32549019607843138" blue="0.49411764705882355" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sMt-Dp-gQ7">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sMt-Dp-gQ7">
                                 <rect key="frame" x="37" y="419" width="300" height="159.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" id="4xv-E9-Q3w"/>
                                 </constraints>
-                                <attributedString key="attributedText">
-                                    <fragment>
-                                        <string key="content">Richt je camera naar de frame toe en wacht tot het kunstwerk tot leven komt.
+                                <string key="text">Richt je camera naar de frame toe en wacht tot het kunstwerk tot leven komt.
+
 </string>
-                                        <attributes>
-                                            <font key="NSFont" size="17" name=".AppleSystemUIFont"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content" base64-UTF8="YES">
-Cg
-</string>
-                                        <attributes>
-                                            <font key="NSFont" size="17" name=".AppleSystemUIFont"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="4" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                                <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H5U-rv-aEH">

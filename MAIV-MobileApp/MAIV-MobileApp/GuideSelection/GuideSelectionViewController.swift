@@ -170,12 +170,6 @@ class GuideSelectionViewController: UIViewController {
         
     }
     
-    //    func setupGuideSelection() {
-    //        guideSelection.delegate = self
-    //        guideSelection.dataSource = self
-    //    }
-    
-   
     @IBAction func stopTour(_ sender: UIButton) {
         let guideInSelection = activeSelectedGuides[0]
         let tourInSelection = activeSelectedTours[0]
@@ -221,14 +215,7 @@ class GuideSelectionViewController: UIViewController {
             
             let activeGuide = ActiveGuide(context: context)
             activeGuide.guideId = guides[cellInCenter!].id
-            
-            
-//            UserDefaults.standard.set(true, forKey: "guideSelected")
-//            UserDefaults.standard.synchronize()
-            
-            
-            
-         
+        
         }
     }
     

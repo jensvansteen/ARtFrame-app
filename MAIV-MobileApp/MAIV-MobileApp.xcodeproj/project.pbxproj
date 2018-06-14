@@ -29,7 +29,6 @@
 		3330E78B20D0D5FC00B1F1BD /* PagePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3330E78A20D0D5FC00B1F1BD /* PagePageViewController.swift */; };
 		3330E78F20D0DF6600B1F1BD /* GuideCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3330E78E20D0DF6600B1F1BD /* GuideCollectionViewCell.swift */; };
 		335BD4D820CE6EA600DBB39E /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 335BD4D620CE6EA600DBB39E /* Model.xcdatamodeld */; };
-		335BD4DA20CE731B00DBB39E /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335BD4D920CE731B00DBB39E /* CoreDataManager.swift */; };
 		3393E27920C7B01A0087844B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3393E27820C7B01A0087844B /* AppDelegate.swift */; };
 		3393E27B20C7B01A0087844B /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 3393E27A20C7B01A0087844B /* art.scnassets */; };
 		3393E28020C7B01A0087844B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3393E27E20C7B01A0087844B /* Main.storyboard */; };
@@ -70,7 +69,6 @@
 		3330E78A20D0D5FC00B1F1BD /* PagePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagePageViewController.swift; sourceTree = "<group>"; };
 		3330E78E20D0DF6600B1F1BD /* GuideCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideCollectionViewCell.swift; sourceTree = "<group>"; };
 		335BD4D720CE6EA600DBB39E /* MAIV-MobileApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "MAIV-MobileApp.xcdatamodel"; sourceTree = "<group>"; };
-		335BD4D920CE731B00DBB39E /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		3393E27520C7B01A0087844B /* MAIV-MobileApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MAIV-MobileApp.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3393E27820C7B01A0087844B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3393E27A20C7B01A0087844B /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
@@ -226,7 +224,6 @@
 				3393E28620C7B01B0087844B /* Info.plist */,
 				333045D320C9CF06001D4DAA /* MapViewViewController.swift */,
 				335BD4D620CE6EA600DBB39E /* Model.xcdatamodeld */,
-				335BD4D920CE731B00DBB39E /* CoreDataManager.swift */,
 			);
 			path = "MAIV-MobileApp";
 			sourceTree = "<group>";
@@ -380,7 +377,6 @@
 				33C7417520CFAA0E00E25B54 /* QuestionUICollectionViewCell.swift in Sources */,
 				33C8FCD320D2103500E4988E /* StickerCollectionViewCell.swift in Sources */,
 				3330E78B20D0D5FC00B1F1BD /* PagePageViewController.swift in Sources */,
-				335BD4DA20CE731B00DBB39E /* CoreDataManager.swift in Sources */,
 				333045DA20CA51A4001D4DAA /* TourTableViewCell.swift in Sources */,
 				3330461620CBB4DA001D4DAA /* PullUpController.swift in Sources */,
 				3330464A20CD1894001D4DAA /* paintingModel.swift in Sources */,

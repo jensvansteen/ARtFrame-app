@@ -14,6 +14,7 @@ struct Painting: Codable {
     let year: String
     let id: String
     let questions: [QAndA]
+    let location: Location
 }
 
 struct QAndA: Codable {
@@ -21,4 +22,9 @@ struct QAndA: Codable {
     let g01: String
     let g02: String
     let g03: String
+}
+
+struct Location: Codable {
+    let lat: Double
+    let long: Double
 }

@@ -1,29 +1,33 @@
 [
     {
-       "id" : "p00001",
-       "name" : "De heilige Franciscus te bed",
-       "artistid" : "a00004",
-       "year" : "circa 1595 - 1625",
-       "questions": [
-        {
-            "question": "Wie heeft dit gemaakt",
-            "g01": "Raphael Sadeler, maakt die mens ook sandalen?",
-            "g02": "Raphael Sadeler, maar zoveel is er niet bekend over hem misschien weet Karel meer over hem.",
-            "g03": "Raphael Sadeler, hij was de jongste van de Sadeler broers die lid waren van de grootste en meest succesvole gravuurders dynastie van Vlaanderen!"
-        },
-        {
-            "question": "Welke stijl is dit?",
-            "g01": "Een oude stijl, je kan zien dat de kleuren tv toen nog niet uitgevonden was!",
-            "g02": "Dit is een gravure!",
-            "g03": "Dit is een gravure! Een gravure is een afdruk in diepdruk-techniek van een afbeelding of een tekst die in een metalen plaat is gegraveerd."
+        "id": "p00001",
+        "name": "De heilige Franciscus te bed",
+        "artistid": "a00004",
+        "year": "circa 1595 - 1625",
+        "questions": [
+            {
+                "question": "Wie heeft dit gemaakt",
+                "g01": "Raphael Sadeler, maakt die mens ook sandalen?",
+                "g02": "Raphael Sadeler, maar zoveel is er niet bekend over hem misschien weet Karel meer over hem.",
+                "g03": "Raphael Sadeler, hij was de jongste van de Sadeler broers die lid waren van de grootste en meest succesvole gravuurders dynastie van Vlaanderen!"
+            },
+            {
+                "question": "Welke stijl is dit?",
+                "g01": "Een oude stijl, je kan zien dat de kleuren tv toen nog niet uitgevonden was!",
+                "g02": "Dit is een gravure!",
+                "g03": "Dit is een gravure! Een gravure is een afdruk in diepdruk-techniek van een afbeelding of een tekst die in een metalen plaat is gegraveerd."
+            }
+        ],
+        "location": {
+            "lat": 51.915336,
+            "long": 4.460695
         }
-    ]
     },
     {
-        "id" : "p00002",
-        "name" : "Pierrot and guitar",
-        "artistid" : "a00001",
-        "year" : "1912",
+        "id": "p00002",
+        "name": "Pierrot and guitar",
+        "artistid": "a00001",
+        "year": "1912",
         "questions": [
             {
                 "question": "Wie heeft dit gemaakt",
@@ -37,13 +41,17 @@
                 "g02": "Dit heeft veel weg van Futurisme",
                 "g03": "Severini maakte dit schilderij in zijn zogenaamde 'neoclassicistische' periode. Waar hij eerder een aanhanger was van het Futurisme, zoekt hij in de jaren 20 naar een meer klassieke balans. Dit sluit aan bij de zogenaamde 'return to order'-stroming waarin een meer analytische, conservatieve, realistische manier van schilderen wordt verkozen boven het kubisme en futurisme."
             }
-        ]  
-     },
-     {
-        "id" : "p00003",
-        "name" : "Kind met tamboerijn",
-        "artistid" : "a00003",
-        "year" : "1912",
+        ],
+        "location": {
+            "lat": 51.922536,
+            "long": 4.471596
+        }
+    },
+    {
+        "id": "p00003",
+        "name": "Kind met tamboerijn",
+        "artistid": "a00003",
+        "year": "1912",
         "questions": [
             {
                 "question": "Wie heeft dit gemaakt",
@@ -56,7 +64,11 @@
                 "g01": "Ik vind dit wel een grave stijl!",
                 "g02": "Dit is een gravure!",
                 "g03": "Dit is een gravure! Een gravure is een afdruk in diepdruk-techniek van een afbeelding of een tekst die in een metalen plaat is gegraveerd."
-            }    
-        ]  
-     }
+            }
+        ],
+        "location": {
+            "lat": 51.927194,
+            "long": 4.456833
+        }
+    }
 ]

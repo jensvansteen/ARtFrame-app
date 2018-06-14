@@ -87,10 +87,6 @@ class PickTourViewController: UIViewController, UITableViewDelegate, UITableView
             cell.tourText.textColor = UIColor(red:0.55, green:0.55, blue:0.55, alpha:1.00)
         }
         
-
-//        for paint in currentTour.paintings {
-//            print("\(paintings[paint]!)\(currentTour.title)")
-//        }
         
         cell.accessoryType = .disclosureIndicator
         

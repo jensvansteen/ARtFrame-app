@@ -80,17 +80,6 @@ class PageShowerViewController: UIViewController, UIPageViewControllerDelegate, 
         }
     }
     
-//    @IBAction func goToNextPage(_ sender: UIButton) {
-//
-//
-//        eenpageVC.setViewControllers([self.viewControllerAtIndex(1)!], direction: .forward, animated: true, completion: nil)
-//
-//        pageControl2.currentPage = 1
-//
-//        eenpageVC.setViewControllers([self.viewControllerAtIndex(pageControl.currentPage + 1)!], direction: .forward, animated: true, completion: nil)
-//
-//        pageControl.currentPage += 1
-//    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
   

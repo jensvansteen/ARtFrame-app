@@ -47,7 +47,7 @@ class StickerDetailViewController: UIViewController {
     
     func setUPTopBar() {
         self.navigationItem.title = selectedSticker!.name
-        navigationItem.backBarButtonItem = UIBarButtonItem(title:"back", style: .plain, target: nil, action: nil)
+        navigationItem.backBarButtonItem = UIBarButtonItem(title:"Back", style: .plain, target: nil, action: nil)
     }
     
     func setUPSticker() {
@@ -57,7 +57,6 @@ class StickerDetailViewController: UIViewController {
             titleLabel.text = selectedSticker!.name
             let imagename = "\(selectedSticker!.id)unlockeddetail"
             imageView.image = UIImage(named: imagename)
-//            titleLabel.text = selectedSticker?.name
             textLabel.text = "Je hebt deze sticker gekregen omdat je de Muziek Tour voltooid hebt!"
         } else {
             titleLocked.text = "Locked"
@@ -67,9 +66,6 @@ class StickerDetailViewController: UIViewController {
             imageView.image = UIImage(named: imagename)
         }
         
-        
-        
-//         textLabel.text =
         
     }
 

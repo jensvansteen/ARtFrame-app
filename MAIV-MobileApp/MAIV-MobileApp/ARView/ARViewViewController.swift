@@ -193,19 +193,6 @@ class ARViewViewController: UIViewController, ARSCNViewDelegate {
         
         node.addChildNode(backgroundNode)
         
-//        NotificationCenter.default.addObserver(forName: .AVPlayerItemDidPlayToEndTime,
-//
-//                                               object: player.currentItem, queue: nil)
-//
-//        { notification in
-//
-//            self.player.seek(to: kCMTimeZero)
-//
-//            self.player.play()
-//
-//            print("reset Video")
-//
-//        }
     }
     
     func getData() {
