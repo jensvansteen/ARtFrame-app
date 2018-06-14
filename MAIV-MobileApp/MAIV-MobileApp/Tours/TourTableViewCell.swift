@@ -13,8 +13,9 @@ class TourTableViewCell: UITableViewCell {
     @IBOutlet var tourTitle: UILabel!
     @IBOutlet var tourText: UILabel!
     @IBOutlet var tourImage: UIImageView!
-    @IBOutlet var tourCompleted: UILabel!
     @IBOutlet var newView: UIView!
+    @IBOutlet var completedImage: UIImageView!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()

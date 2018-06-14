@@ -37,6 +37,7 @@
 		3393E28520C7B01B0087844B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3393E28320C7B01B0087844B /* LaunchScreen.storyboard */; };
 		3393E28D20C816540087844B /* GuideSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3393E28C20C816540087844B /* GuideSelectionViewController.swift */; };
 		33B8328F20D299500015008D /* p00002.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 33B8328E20D28C010015008D /* p00002.mp4 */; };
+		33B8329120D2C44B0015008D /* p00003.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 33B8329020D2C2F70015008D /* p00003.mp4 */; };
 		33C7417520CFAA0E00E25B54 /* QuestionUICollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C7417420CFAA0E00E25B54 /* QuestionUICollectionViewCell.swift */; };
 		33C8FCC320D1D18D00E4988E /* guides.json in Resources */ = {isa = PBXBuildFile; fileRef = 33C8FCC220D1D18D00E4988E /* guides.json */; };
 		33C8FCC520D1D1AF00E4988E /* paintings.json in Resources */ = {isa = PBXBuildFile; fileRef = 33C8FCC420D1D1AF00E4988E /* paintings.json */; };
@@ -79,6 +80,7 @@
 		3393E28620C7B01B0087844B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3393E28C20C816540087844B /* GuideSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideSelectionViewController.swift; sourceTree = "<group>"; };
 		33B8328E20D28C010015008D /* p00002.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = p00002.mp4; sourceTree = "<group>"; };
+		33B8329020D2C2F70015008D /* p00003.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = p00003.mp4; sourceTree = "<group>"; };
 		33C7417420CFAA0E00E25B54 /* QuestionUICollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionUICollectionViewCell.swift; sourceTree = "<group>"; };
 		33C8FCC220D1D18D00E4988E /* guides.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = guides.json; sourceTree = "<group>"; };
 		33C8FCC420D1D1AF00E4988E /* paintings.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = paintings.json; sourceTree = "<group>"; };
@@ -217,6 +219,7 @@
 				3393E27A20C7B01A0087844B /* art.scnassets */,
 				3393E27E20C7B01A0087844B /* Main.storyboard */,
 				3393E28120C7B01B0087844B /* Assets.xcassets */,
+				33B8329020D2C2F70015008D /* p00003.mp4 */,
 				33B8328E20D28C010015008D /* p00002.mp4 */,
 				33C8FCD020D1F3AA00E4988E /* p00001.mp4 */,
 				3393E28320C7B01B0087844B /* LaunchScreen.storyboard */,
@@ -305,6 +308,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33B8329120D2C44B0015008D /* p00003.mp4 in Resources */,
 				33B8328F20D299500015008D /* p00002.mp4 in Resources */,
 				33C8FCD120D1F3BA00E4988E /* p00001.mp4 in Resources */,
 				33C8FCC520D1D1AF00E4988E /* paintings.json in Resources */,

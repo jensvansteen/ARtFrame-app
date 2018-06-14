@@ -54,6 +54,7 @@ class StickerDetailViewController: UIViewController {
         
         if collectStatus! {
             titleLocked.text = "Unlocked"
+            titleLabel.text = selectedSticker!.name
             let imagename = "\(selectedSticker!.id)unlockeddetail"
             imageView.image = UIImage(named: imagename)
 //            titleLabel.text = selectedSticker?.name
@@ -61,6 +62,7 @@ class StickerDetailViewController: UIViewController {
         } else {
             titleLocked.text = "Locked"
             textLabel.text = "Voltooi de Muziek Tour om deze sticker te voltooien!"
+            titleLabel.text = selectedSticker!.name
             let imagename = "\(selectedSticker!.id)lockeddetail"
             imageView.image = UIImage(named: imagename)
         }

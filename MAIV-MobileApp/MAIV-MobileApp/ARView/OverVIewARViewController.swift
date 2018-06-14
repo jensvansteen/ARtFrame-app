@@ -233,6 +233,7 @@ class OverVIewARViewController: PullUpController, UICollectionViewDelegate, UICo
       let questionObject = scannendPainting!.questions[pat.row]
       var answerForQes = "niets"
       quistion.text = questionObject.question
+      quistion.layer.cornerRadius = 15
         switch guideid {
         case "g01":
             answerForQes = questionObject.g01
