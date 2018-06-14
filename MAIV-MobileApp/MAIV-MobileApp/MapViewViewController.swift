@@ -108,7 +108,6 @@ class MapViewViewController: UIViewController, MKMapViewDelegate {
             let imgName = "small-\(selectedGuide!.id)"
             tourOrGuideButton.setImage(UIImage(named: imgName), for: .normal)
             tourOrGuideLabel.text = "Gids"
-            let numberOfCheckedPaintings = getCheckedPaintings()
             self.navigationItem.leftBarButtonItem = self.stopTourButton
             self.navigationItem.title = selectedTour?.title
         } else if inTour == false {
@@ -134,7 +133,7 @@ class MapViewViewController: UIViewController, MKMapViewDelegate {
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         
-        let reusableAnnotation = mapView.dequeueReusableAnnotationView(withIdentifier: "devine")
+//        let reusableAnnotation = mapView.dequeueReusableAnnotationView(withIdentifier: "devine")
         
          let mijnView = MKAnnotationView()
          mijnView.frame = CGRect(x: 0, y: 0, width: 40, height: 40)

@@ -41,7 +41,7 @@ class StickerCollectionViewController: UIViewController, UICollectionViewDelegat
     
     func setUPTopBar() {
         self.navigationItem.title = "Jouw stickers"
-        navigationItem.backBarButtonItem = UIBarButtonItem(title:"back", style: .plain, target: nil, action: nil)
+        navigationItem.backBarButtonItem = UIBarButtonItem(title:"Back", style: .plain, target: nil, action: nil)
         collectedLabel.text = "\(checkedPaintings.count)/\(paintings.count)"
     }
     

@@ -79,8 +79,6 @@ class GuideSelectionViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         checkData()
         
-        print("Gids\(selectedGuide?.id)")
-        
         layOutUi()
 
     }
