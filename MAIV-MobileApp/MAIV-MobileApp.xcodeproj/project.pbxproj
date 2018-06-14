@@ -29,7 +29,6 @@
 		3330E78B20D0D5FC00B1F1BD /* PagePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3330E78A20D0D5FC00B1F1BD /* PagePageViewController.swift */; };
 		3330E78F20D0DF6600B1F1BD /* GuideCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3330E78E20D0DF6600B1F1BD /* GuideCollectionViewCell.swift */; };
 		335BD4D820CE6EA600DBB39E /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 335BD4D620CE6EA600DBB39E /* Model.xcdatamodeld */; };
-		335BD4DA20CE731B00DBB39E /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335BD4D920CE731B00DBB39E /* CoreDataManager.swift */; };
 		3393E27920C7B01A0087844B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3393E27820C7B01A0087844B /* AppDelegate.swift */; };
 		3393E27B20C7B01A0087844B /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 3393E27A20C7B01A0087844B /* art.scnassets */; };
 		3393E28020C7B01A0087844B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3393E27E20C7B01A0087844B /* Main.storyboard */; };
@@ -37,6 +36,7 @@
 		3393E28520C7B01B0087844B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3393E28320C7B01B0087844B /* LaunchScreen.storyboard */; };
 		3393E28D20C816540087844B /* GuideSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3393E28C20C816540087844B /* GuideSelectionViewController.swift */; };
 		33B8328F20D299500015008D /* p00002.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 33B8328E20D28C010015008D /* p00002.mp4 */; };
+		33B8329120D2C44B0015008D /* p00003.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 33B8329020D2C2F70015008D /* p00003.mp4 */; };
 		33C7417520CFAA0E00E25B54 /* QuestionUICollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C7417420CFAA0E00E25B54 /* QuestionUICollectionViewCell.swift */; };
 		33C8FCC320D1D18D00E4988E /* guides.json in Resources */ = {isa = PBXBuildFile; fileRef = 33C8FCC220D1D18D00E4988E /* guides.json */; };
 		33C8FCC520D1D1AF00E4988E /* paintings.json in Resources */ = {isa = PBXBuildFile; fileRef = 33C8FCC420D1D1AF00E4988E /* paintings.json */; };
@@ -69,8 +69,7 @@
 		3330E78A20D0D5FC00B1F1BD /* PagePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagePageViewController.swift; sourceTree = "<group>"; };
 		3330E78E20D0DF6600B1F1BD /* GuideCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideCollectionViewCell.swift; sourceTree = "<group>"; };
 		335BD4D720CE6EA600DBB39E /* MAIV-MobileApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "MAIV-MobileApp.xcdatamodel"; sourceTree = "<group>"; };
-		335BD4D920CE731B00DBB39E /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
-		3393E27520C7B01A0087844B /* MAIV-MobileApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MAIV-MobileApp.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3393E27520C7B01A0087844B /* ARtFrame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARtFrame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3393E27820C7B01A0087844B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3393E27A20C7B01A0087844B /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
 		3393E27F20C7B01A0087844B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -79,6 +78,7 @@
 		3393E28620C7B01B0087844B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3393E28C20C816540087844B /* GuideSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideSelectionViewController.swift; sourceTree = "<group>"; };
 		33B8328E20D28C010015008D /* p00002.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = p00002.mp4; sourceTree = "<group>"; };
+		33B8329020D2C2F70015008D /* p00003.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = p00003.mp4; sourceTree = "<group>"; };
 		33C7417420CFAA0E00E25B54 /* QuestionUICollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionUICollectionViewCell.swift; sourceTree = "<group>"; };
 		33C8FCC220D1D18D00E4988E /* guides.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = guides.json; sourceTree = "<group>"; };
 		33C8FCC420D1D1AF00E4988E /* paintings.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = paintings.json; sourceTree = "<group>"; };
@@ -199,7 +199,7 @@
 		3393E27620C7B01A0087844B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3393E27520C7B01A0087844B /* MAIV-MobileApp.app */,
+				3393E27520C7B01A0087844B /* ARtFrame.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -217,13 +217,13 @@
 				3393E27A20C7B01A0087844B /* art.scnassets */,
 				3393E27E20C7B01A0087844B /* Main.storyboard */,
 				3393E28120C7B01B0087844B /* Assets.xcassets */,
+				33B8329020D2C2F70015008D /* p00003.mp4 */,
 				33B8328E20D28C010015008D /* p00002.mp4 */,
 				33C8FCD020D1F3AA00E4988E /* p00001.mp4 */,
 				3393E28320C7B01B0087844B /* LaunchScreen.storyboard */,
 				3393E28620C7B01B0087844B /* Info.plist */,
 				333045D320C9CF06001D4DAA /* MapViewViewController.swift */,
 				335BD4D620CE6EA600DBB39E /* Model.xcdatamodeld */,
-				335BD4D920CE731B00DBB39E /* CoreDataManager.swift */,
 			);
 			path = "MAIV-MobileApp";
 			sourceTree = "<group>";
@@ -248,9 +248,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		3393E27420C7B01A0087844B /* MAIV-MobileApp */ = {
+		3393E27420C7B01A0087844B /* ARtFrame */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3393E28920C7B01B0087844B /* Build configuration list for PBXNativeTarget "MAIV-MobileApp" */;
+			buildConfigurationList = 3393E28920C7B01B0087844B /* Build configuration list for PBXNativeTarget "ARtFrame" */;
 			buildPhases = (
 				16790E3A98916E1794BAC245 /* [CP] Check Pods Manifest.lock */,
 				3393E27120C7B01A0087844B /* Sources */,
@@ -262,9 +262,9 @@
 			);
 			dependencies = (
 			);
-			name = "MAIV-MobileApp";
+			name = ARtFrame;
 			productName = "MAIV-MobileApp";
-			productReference = 3393E27520C7B01A0087844B /* MAIV-MobileApp.app */;
+			productReference = 3393E27520C7B01A0087844B /* ARtFrame.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -295,7 +295,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				3393E27420C7B01A0087844B /* MAIV-MobileApp */,
+				3393E27420C7B01A0087844B /* ARtFrame */,
 			);
 		};
 /* End PBXProject section */
@@ -305,6 +305,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33B8329120D2C44B0015008D /* p00003.mp4 in Resources */,
 				33B8328F20D299500015008D /* p00002.mp4 in Resources */,
 				33C8FCD120D1F3BA00E4988E /* p00001.mp4 in Resources */,
 				33C8FCC520D1D1AF00E4988E /* paintings.json in Resources */,
@@ -348,12 +349,10 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-MAIV-MobileApp/Pods-MAIV-MobileApp-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/ScalingCarousel/ScalingCarousel.framework",
-				"${BUILT_PRODUCTS_DIR}/Spring/Spring.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ScalingCarousel.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Spring.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -376,7 +375,6 @@
 				33C7417520CFAA0E00E25B54 /* QuestionUICollectionViewCell.swift in Sources */,
 				33C8FCD320D2103500E4988E /* StickerCollectionViewCell.swift in Sources */,
 				3330E78B20D0D5FC00B1F1BD /* PagePageViewController.swift in Sources */,
-				335BD4DA20CE731B00DBB39E /* CoreDataManager.swift in Sources */,
 				333045DA20CA51A4001D4DAA /* TourTableViewCell.swift in Sources */,
 				3330461620CBB4DA001D4DAA /* PullUpController.swift in Sources */,
 				3330464A20CD1894001D4DAA /* paintingModel.swift in Sources */,
@@ -584,7 +582,7 @@
 				PRESERVE_DEAD_CODE_INITS_AND_TERMS = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "team7.maivApp.MAIV-MobileApp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_COMPILATION_MODE = singlefile;
+				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -602,7 +600,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3393E28920C7B01B0087844B /* Build configuration list for PBXNativeTarget "MAIV-MobileApp" */ = {
+		3393E28920C7B01B0087844B /* Build configuration list for PBXNativeTarget "ARtFrame" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3393E28A20C7B01B0087844B /* Debug */,

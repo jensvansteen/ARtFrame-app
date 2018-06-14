@@ -8,15 +8,6 @@
 
 import Foundation
 
-//struct Tour : Codable {
-//    var title: String
-//    var img: String
-//    var text: String
-//    var completed: Int
-//    var highlighted: Bool
-//    
-//}
-
 class ContentAPI {
     
     static var shared : ContentAPI = ContentAPI()
@@ -29,7 +20,6 @@ class ContentAPI {
         guard let data = try? Data(contentsOf: url) else {return nil}
 
         let decoder = JSONDecoder()
-//        decoder.keyDecodingStrategy = .convertFromSnakeCase
 
         return try! decoder.decode(swiftType.self, from: data)
 

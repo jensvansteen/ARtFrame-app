@@ -4,7 +4,7 @@
         "title": "Muziek Tour",
         "img": "muziektour",
         "text": "Een tour over muziek waar je eigen band kan vormen.",
-        "paintings": ["p00001","p00002"],
+        "paintings": ["p00001","p00002", "p00003"],
         "completed": 3,
         "highlighted": true
     },

@@ -150,33 +150,8 @@ class OverVIewARViewController: PullUpController, UICollectionViewDelegate, UICo
             self.nameArtwork.text = self.scannendPainting!.name
             self.questionCollection.reloadData()
 //
-//            let checkedScannendPaintings = self.checkedPaintings.filter { $0.paintingId == self.scannendPainting!.id}
-//
-//            if checkedScannendPaintings.count == 0 {
-//                let collectedPainting = PaintingChecked(context: self.context)
-//                collectedPainting.paintingId = self.scannendPainting!.id
-//                print(self.checkedPaintings.count)
-//            } else {
-//                print("Al gehad")
-//                print(self.checkedPaintings.count)
-//            }
-            
-//            if checkedScannendPaintings  {
-//               print("deze is al aanwezig")
-//            } else {
-//                print("moet je toevoegen")
-//            }
         }
     }
-    
-//    func getData() {
-//        do {
-//            checkedPaintings = try context.fetch(PaintingChecked.fetchRequest())
-//        }
-//        catch {
-//            print("Fetching Failed")
-//        }
-//    }
     
     func setUpUi() {
         
@@ -233,6 +208,7 @@ class OverVIewARViewController: PullUpController, UICollectionViewDelegate, UICo
       let questionObject = scannendPainting!.questions[pat.row]
       var answerForQes = "niets"
       quistion.text = questionObject.question
+      quistion.layer.cornerRadius = 15
         switch guideid {
         case "g01":
             answerForQes = questionObject.g01

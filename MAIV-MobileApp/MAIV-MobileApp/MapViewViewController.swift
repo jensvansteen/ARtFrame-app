@@ -7,14 +7,15 @@
 //
 
 import UIKit
+import MapKit
 
 var paintings : Array<Painting> = ContentAPI.shared.paintings
 
-class MapViewViewController: UIViewController {
+class MapViewViewController: UIViewController, MKMapViewDelegate {
     
     @IBOutlet var stopTourButton: UIBarButtonItem!
-    @IBOutlet var collectedIndicator: UIBarButtonItem!
     @IBOutlet var tourOrGuideLabel: UILabel!
+    @IBOutlet var rotterdamMap: MKMapView!
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
@@ -34,13 +35,21 @@ class MapViewViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setUpTopBar()
+       
         // Do any additional setup after loading the view.
+        
+        let centrum = CLLocationCoordinate2D(latitude: 51.923592, longitude: 4.468323)
+        rotterdamMap.centerCoordinate = centrum
+        rotterdamMap.region = MKCoordinateRegionMakeWithDistance(centrum, 2000, 2000)
+        
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         
         getData()
+        
+
         
         if activeSelectedTours.count != 0 && activeSelectedGuides.count != 0 {
             setUpTour(inTour: true)
@@ -48,11 +57,29 @@ class MapViewViewController: UIViewController {
             setUpTour(inTour: false)
         }
         
+        setPins()
     }
     
-    func setUpTopBar() {
+
+    func setPins() {
         
-        collectedIndicator.title = "\(checkedPaintings.count)/\(paintings.count)"
+        for painting in paintings {
+            let paintingPoint = MKPointAnnotation()
+            paintingPoint.coordinate = CLLocationCoordinate2D(latitude: painting.location.lat, longitude: painting.location.long)
+            
+            var checkedPainting : [PaintingChecked] = []
+            
+            checkedPainting = checkedPaintings.filter { $0.paintingId == painting.id}
+            
+            if checkedPainting.count == 0 {
+                paintingPoint.subtitle = "locked"
+            } else {
+                paintingPoint.subtitle = "unlocked"
+            }
+            
+           
+            rotterdamMap.addAnnotation(paintingPoint)
+        }
         
     }
     
@@ -81,13 +108,10 @@ class MapViewViewController: UIViewController {
             let imgName = "small-\(selectedGuide!.id)"
             tourOrGuideButton.setImage(UIImage(named: imgName), for: .normal)
             tourOrGuideLabel.text = "Gids"
-            let numberOfCheckedPaintings = getCheckedPaintings()
             self.navigationItem.leftBarButtonItem = self.stopTourButton
-            self.navigationItem.rightBarButtonItem = self.collectedIndicator
             self.navigationItem.title = selectedTour?.title
-            collectedIndicator.title = "\(numberOfCheckedPaintings)/\(selectedTour!.paintings.count)"
         } else if inTour == false {
-            self.navigationItem.title = "Boijmans"
+            self.navigationItem.title = "ARtFrame"
             tourOrGuideButton.setImage(UIImage(named: "Tour"), for: .normal)
             tourOrGuideLabel.text = "Tour"
             self.navigationItem.leftBarButtonItem = nil
@@ -104,6 +128,24 @@ class MapViewViewController: UIViewController {
         catch {
             print("Fetching Failed")
         }
+        
+    }
+    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        
+         let mijnView = MKAnnotationView()
+         mijnView.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
+        
+        
+        if (annotation.subtitle! == "locked") {
+            mijnView.image = UIImage(named: "notchecked")
+        }
+        else if (annotation.subtitle! == "unlocked") {
+            mijnView.image = UIImage(named: "checked")
+        }
+        return mijnView
+        
+        
     }
    
     
@@ -119,32 +161,6 @@ class MapViewViewController: UIViewController {
         
     }
     
-    
-    
-//    override func viewDidAppear(_ animated: Bool) {
-//        if guideSelected() {
-//            print("Er is hier iets geselecteerd")
-//            let gidsImage = UIImage(named: "gidsIcon")
-//            tourOrGuideButton.setImage(gidsImage, for: .normal)
-//        } else {
-//            let tourImage = UIImage(named: "Tour")
-//            tourOrGuideButton.setImage(tourImage, for: .normal)
-//        }
-//    }
-//
-//    func getData() {
-//        do {
-//            guides = try context.fetch(GuideData.fetchRequest())
-//        }
-//        catch {
-//            print("Fetching Failed")
-//        }
-//    }
-//
-//    //Nakijken of er een gids geselecteerd is
-//    fileprivate func guideSelected() -> Bool {
-//        return UserDefaults.standard.bool(forKey: "guideSelected")
-//    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -166,10 +182,6 @@ class MapViewViewController: UIViewController {
             targetVC.selectedGuide = selectedGuide
             targetVC.selectedTour = selectedTour
         }
-        
-//        if segue.identifier == "toStickerView" {
-//            let targetVC = segue.destination as! StickerCollectionViewController
-//        }
         
         
     }

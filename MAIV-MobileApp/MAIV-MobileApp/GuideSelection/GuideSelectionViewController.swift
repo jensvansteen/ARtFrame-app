@@ -26,6 +26,31 @@ var initialScrollDone = false;
 
 var guides : Array<Guide> = ContentAPI.shared.guides
 
+extension UILabel {
+    
+    // Pass value for any one of both parameters and see result
+    func setLineSpacing(lineSpacing: CGFloat = 0.0, lineHeightMultiple: CGFloat = 0.0) {
+        
+        guard let labelText = self.text else { return }
+        
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.lineSpacing = lineSpacing
+        paragraphStyle.lineHeightMultiple = lineHeightMultiple
+        
+        let attributedString:NSMutableAttributedString
+        if let labelattributedText = self.attributedText {
+            attributedString = NSMutableAttributedString(attributedString: labelattributedText)
+        } else {
+            attributedString = NSMutableAttributedString(string: labelText)
+        }
+        
+        // Line spacing attribute
+        attributedString.addAttribute(NSAttributedStringKey.paragraphStyle, value:paragraphStyle, range:NSMakeRange(0, attributedString.length))
+        
+        self.attributedText = attributedString
+    }
+}
+
 class GuideSelectionViewController: UIViewController {
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
@@ -55,6 +80,7 @@ class GuideSelectionViewController: UIViewController {
         checkData()
         
         layOutUi()
+
     }
     
     
@@ -73,7 +99,7 @@ class GuideSelectionViewController: UIViewController {
         
         if initialScrollDone == false {
             initialScrollDone = true;
-            
+
             if selectedGuide != nil {
                 scrollToIndex(index: selectedGuide!.index)
                 setGuideInfo(index: selectedGuide!.index)
@@ -81,7 +107,7 @@ class GuideSelectionViewController: UIViewController {
                    scrollToIndex(index: focus)
                    setGuideInfo(index: focus)
             }
-        
+
         }
       
         
@@ -142,12 +168,6 @@ class GuideSelectionViewController: UIViewController {
         
     }
     
-    //    func setupGuideSelection() {
-    //        guideSelection.delegate = self
-    //        guideSelection.dataSource = self
-    //    }
-    
-   
     @IBAction func stopTour(_ sender: UIButton) {
         let guideInSelection = activeSelectedGuides[0]
         let tourInSelection = activeSelectedTours[0]
@@ -178,6 +198,8 @@ class GuideSelectionViewController: UIViewController {
     func setGuideInfo(index: Int) {
         guideName.text = guides[index].fullName
         guideInfo.text = guides[index].info
+        guideInfo.setLineSpacing(lineSpacing: 5)
+        guideInfo.textAlignment = .center
     }
     
     
@@ -191,14 +213,7 @@ class GuideSelectionViewController: UIViewController {
             
             let activeGuide = ActiveGuide(context: context)
             activeGuide.guideId = guides[cellInCenter!].id
-            
-            
-//            UserDefaults.standard.set(true, forKey: "guideSelected")
-//            UserDefaults.standard.synchronize()
-            
-            
-            
-         
+        
         }
     }
     
@@ -224,10 +239,10 @@ extension CarouselDatasource: UICollectionViewDataSource {
         let image = UIImage(named: guide)
         let imageView = UIImageView(image: image!)
         
-        imageView.frame = CGRect(x: 0, y: 0, width: 240, height: 240)
+        imageView.frame = CGRect(x: 3, y: 0, width: 250, height: 250)
         
         
-        let myNewView=UIView(frame: CGRect(x: 10, y: 0, width: 240, height: 240))
+        let myNewView=UIView(frame: CGRect(x: 0, y: 0, width: 250, height: 250))
         
         myNewView.addSubview(imageView)
         

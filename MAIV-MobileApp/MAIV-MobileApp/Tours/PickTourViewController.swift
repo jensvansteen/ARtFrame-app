@@ -15,13 +15,7 @@ class PickTourViewController: UIViewController, UITableViewDelegate, UITableView
     
      var guide: String!
     
-//    var tours: Dictionary<String, Tour> = ContentAPI.shared.tours
-//    var tourKeys: Array<String> = ContentAPI.shared.tourKeys
-//    var paintings: Dictionary<String, Painting> = ContentAPI.shared.paintings
-    
-//     var tourKeys = Array(tours.keys)
-    
-    
+
     @IBOutlet var tourTableView: UITableView!
     
     override func viewDidLoad() {
@@ -33,51 +27,18 @@ class PickTourViewController: UIViewController, UITableViewDelegate, UITableView
         
         setUpTopBar()
         
-        
-//        loadJSON()
-
         // Do any additional setup after loading the view.
     }
     
     func setUpTopBar() {
-        self.navigationItem.title = "Plan je tour"
+        self.navigationItem.title = "Start een tour"
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    
-    
-//    func loadJSON() {
-//        //offline
-//        let path = Bundle.main.path(forResource: "tours", ofType: "json")
-//        let url: URL = URL(fileURLWithPath: path!)
-//
-//        let loadingTask = URLSession.shared.dataTask(with: url, completionHandler: completeHandler)
-//        loadingTask.resume()
-//    }
-//
-//    func completeHandler(data:Data?, response:URLResponse?, error:Error?) {
-//
-//        //        let parsedData = String.init(data: data!, encoding: String.Encoding.utf8)
-//
-//
-//        let decoder = JSONDecoder()
-//
-//        do {
-//            let tourList = try decoder.decode(Tours.self, from: data!)
-//            tours = tourList.tours
-//            DispatchQueue.main.async {
-//                self.tourTableView.reloadData()
-//            }
-//        } catch let error {
-//            print(error)
-//        }
-//
-//
-//    }
+
     
     func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
@@ -111,11 +72,21 @@ class PickTourViewController: UIViewController, UITableViewDelegate, UITableView
         cell.tourText.text = currentTour.text
         cell.tourImage.image = UIImage(named: imageArray[indexPath.row])
 
-        cell.tourCompleted.text = "\(String(currentTour.completed))/\(4)"
-
-//        for paint in currentTour.paintings {
-//            print("\(paintings[paint]!)\(currentTour.title)")
-//        }
+        let number = Int(arc4random_uniform(4))
+        
+        print("partof:\(number)")
+        if number%2  == 0 {
+           cell.completedImage.image = UIImage(named: "3collected")
+        } else {
+            cell.completedImage.image = UIImage(named: "4collected")
+        }
+        
+        if currentTour.highlighted == true {
+            cell.tourText.textColor = UIColor.white
+        } else {
+            cell.tourText.textColor = UIColor(red:0.55, green:0.55, blue:0.55, alpha:1.00)
+        }
+        
         
         cell.accessoryType = .disclosureIndicator
         
@@ -139,25 +110,8 @@ class PickTourViewController: UIViewController, UITableViewDelegate, UITableView
             
             let activeTour = ActiveTour(context: context)
             activeTour.tourId = tours[(selectedIndexPath?.row)!].id
-            
-            
-            
-//
-//            let sortedKeys = tourKeys.sorted()
-//
-//            let theSelectedTour = tours[sortedKeys[(selectedIndexPath?.row)!]]!
-//
-//            let selectedGuide = guide
-//
-//            mapVC.selectedTour = theSelectedTour
-            
-//            let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-//            context.delete(task)
-            
-            
 
-
-           
+            
         }
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
