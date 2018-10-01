@@ -60,7 +60,6 @@ class OverVIewARViewController: PullUpController, UICollectionViewDelegate, UICo
         mainView.roundCorners([.topLeft, .topRight], radius: 40)
         quistionView.roundCorners([.topLeft, .topRight], radius: 40)
         
-        questionCollection.estimatedItemSize = CGSizeMake(1.f, 1.f);
         // Do any additional setup after loading the view.
         
         self.didMoveToStickyPoint = { point in
