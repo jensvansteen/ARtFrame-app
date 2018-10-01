@@ -22,7 +22,7 @@ extension UIView {
     
 }
 
-class OverVIewARViewController: PullUpController, UICollectionViewDelegate, UICollectionViewDataSource {
+class OverVIewARViewController: PullUpController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
 //    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
@@ -184,7 +184,7 @@ class OverVIewARViewController: PullUpController, UICollectionViewDelegate, UICo
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "quistionCell", for: indexPath) as! QuestionUICollectionViewCell
         
-       
+        
         
 //        print(scannendPainting?.questions[indexPath].["question"])
         
@@ -198,9 +198,27 @@ class OverVIewARViewController: PullUpController, UICollectionViewDelegate, UICo
                 self?.showAnswer(pat: indexPath!)
             }
         }
+        
+        
        
     
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        if scannendPainting?.questions[indexPath.row].question != nil {
+            
+            let size = CGSize(width: 200, height: 40)
+            
+            let attributes = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 15)]
+            
+            let estimedSizeText = NSString(string: scannendPainting!.questions[indexPath.row].question).boundingRect(with: size, options: .usesLineFragmentOrigin, attributes: attributes, context: nil)
+            
+            print("the size is \(estimedSizeText)")
+            
+            return CGSize(width: estimedSizeText.width + 20, height: 40)
+        }
+        return CGSize(width: 40, height: 40)
     }
     
     func showAnswer(pat: IndexPath) {
@@ -209,12 +227,6 @@ class OverVIewARViewController: PullUpController, UICollectionViewDelegate, UICo
       let questionObject = scannendPainting!.questions[pat.row]
       var answerForQes = "niets"
       quistion.text = questionObject.question
-//      quistion.translatesAutoresizingMaskIntoConstraints = false
-//        print(quistion.text.frame.width);
-//      quistion.widthAnchor.constraint(equalToConstant: 280).isActive = true
-//      quistionView.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
-//      quistion.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 60).isActive = true
-//      quistion.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
       questionVIew.layer.cornerRadius = self.quistion.frame.height * 0.9
         print("het is dus zo breed\(quistion.frame.width)");
         switch guideid {

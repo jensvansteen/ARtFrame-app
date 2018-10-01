@@ -6,7 +6,7 @@
         "year": "circa 1595 - 1625",
         "questions": [
             {
-                "question": "Wie heeft dit gemaakt",
+                "question": "Wie heeft dit gemaakt?",
                 "g01": "Raphael Sadeler, maakt die mens ook sandalen?",
                 "g02": "Raphael Sadeler, maar zoveel is er niet bekend over hem misschien weet Karel meer over hem.",
                 "g03": "Raphael Sadeler, hij was de jongste van de Sadeler broers die lid waren van de grootste en meest succesvole gravuurders dynastie van Vlaanderen!"
@@ -16,6 +16,18 @@
                 "g01": "Een oude stijl, je kan zien dat de kleuren tv toen nog niet uitgevonden was!",
                 "g02": "Dit is een gravure!",
                 "g03": "Dit is een gravure! Een gravure is een afdruk in diepdruk-techniek van een afbeelding of een tekst die in een metalen plaat is gegraveerd."
+            },
+            {
+                "question": "Hoeveel kost dit werk?",
+                "g01": "Raphael Sadeler, maakt die mens ook sandalen?",
+                "g02": "Raphael Sadeler, maar zoveel is er niet bekend over hem misschien weet Karel meer over hem.",
+                "g03": "Raphael Sadeler, hij was de jongste van de Sadeler broers die lid waren van de grootste en meest succesvole gravuurders dynastie van Vlaanderen!"
+            },
+            {
+                "question": "Uit welke tijd is het werk?",
+                "g01": "Raphael Sadeler, maakt die mens ook sandalen?",
+                "g02": "Raphael Sadeler, maar zoveel is er niet bekend over hem misschien weet Karel meer over hem.",
+                "g03": "Raphael Sadeler, hij was de jongste van de Sadeler broers die lid waren van de grootste en meest succesvole gravuurders dynastie van Vlaanderen!"
             }
         ],
         "location": {
