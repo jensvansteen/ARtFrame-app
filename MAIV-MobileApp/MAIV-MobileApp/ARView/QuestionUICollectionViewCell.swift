@@ -10,6 +10,7 @@ import UIKit
 
 class QuestionUICollectionViewCell: UICollectionViewCell {
     
+    
     @IBOutlet var questionCell: UIButton!
     
     var callBack : ((UICollectionViewCell?)->Void)?

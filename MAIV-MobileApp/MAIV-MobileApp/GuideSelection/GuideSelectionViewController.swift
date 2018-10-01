@@ -15,8 +15,8 @@ var activeSelectedTours: [ActiveTour] = []
 
 var activeSelectedGuides: [ActiveGuide] = []
 
- var selectedGuide : Guide?
- var selectedTour : Tour?
+var selectedGuide : Guide?
+var selectedTour : Tour?
 
 var cellInCenter : Int?
 
@@ -45,7 +45,7 @@ extension UILabel {
         }
         
         // Line spacing attribute
-        attributedString.addAttribute(NSAttributedStringKey.paragraphStyle, value:paragraphStyle, range:NSMakeRange(0, attributedString.length))
+        attributedString.addAttribute(NSAttributedString.Key.paragraphStyle, value:paragraphStyle, range:NSMakeRange(0, attributedString.length))
         
         self.attributedText = attributedString
     }
@@ -62,8 +62,9 @@ class GuideSelectionViewController: UIViewController {
     @IBOutlet var stopTourButton: UIButton!
     @IBOutlet var selectButton: UIButton!
     @IBOutlet var changeButton: UIButton!
-
     
+    
+    let screenSize = Int(UIScreen.main.bounds.width)
     
     private struct Constants {
         static let carouselHideConstant: CGFloat = -50
@@ -80,14 +81,14 @@ class GuideSelectionViewController: UIViewController {
         checkData()
         
         layOutUi()
-
+        
     }
     
     
     override func viewWillDisappear(_ animated : Bool) {
         super.viewWillDisappear(animated)
         
-            initialScrollDone = false
+        initialScrollDone = false
         
     }
     
@@ -95,31 +96,31 @@ class GuideSelectionViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-    
+        
         
         if initialScrollDone == false {
             initialScrollDone = true;
-
+            
             if selectedGuide != nil {
                 scrollToIndex(index: selectedGuide!.index)
                 setGuideInfo(index: selectedGuide!.index)
             } else {
-                   scrollToIndex(index: focus)
-                   setGuideInfo(index: focus)
+                scrollToIndex(index: focus)
+                setGuideInfo(index: focus)
             }
-
+            
         }
-      
+        
         
     }
     
     func layOutUi() {
         
         if activeSelectedTours.count != 0 && activeSelectedGuides.count != 0 {
-           self.navigationItem.title = selectedTour!.title
-           viewTitle.text = "Kies je gids"
-           changeButton.isHidden = false
-           selectButton.isHidden = true
+            self.navigationItem.title = selectedTour!.title
+            viewTitle.text = "Kies je gids"
+            changeButton.isHidden = false
+            selectButton.isHidden = true
         } else {
             stopTourButton.isHidden = true
             selectButton.isHidden = false
@@ -140,7 +141,7 @@ class GuideSelectionViewController: UIViewController {
             print("Fetching Failed")
         }
         
-    
+        
         if activeSelectedGuides.count != 0 && activeSelectedTours.count != 0 {
             selectedGuide = guides.filter { $0.id == activeSelectedGuides[0].guideId}[0]
             selectedTour = tours.filter { $0.id == activeSelectedTours[0].tourId }[0]
@@ -213,7 +214,7 @@ class GuideSelectionViewController: UIViewController {
             
             let activeGuide = ActiveGuide(context: context)
             activeGuide.guideId = guides[cellInCenter!].id
-        
+            
         }
     }
     
@@ -239,15 +240,27 @@ extension CarouselDatasource: UICollectionViewDataSource {
         let image = UIImage(named: guide)
         let imageView = UIImageView(image: image!)
         
-        imageView.frame = CGRect(x: 3, y: 0, width: 250, height: 250)
+        var myNewView = UIView(frame: CGRect(x: 0, y: 0, width: 250, height: 250))
         
-        
-        let myNewView=UIView(frame: CGRect(x: 0, y: 0, width: 250, height: 250))
+        switch screenSize {
+        case 320:
+            imageView.frame = CGRect(x: 3, y: 0, width: 250, height: 250)
+            myNewView=UIView(frame: CGRect(x: 0, y: 0, width: 250, height: 250))
+        case 375:
+            imageView.frame = CGRect(x: 3, y: 0, width: 250, height: 250)
+            myNewView=UIView(frame: CGRect(x: 0, y: 0, width: 250, height: 250))
+        case 414:
+            imageView.frame = CGRect(x: -2.5, y: 0, width: 300, height: 300)
+            myNewView=UIView(frame: CGRect(x: 0, y: 0, width: 300, height: 300))
+        default:
+            imageView.frame = CGRect(x: 3, y: 0, width: 250, height: 250)
+            myNewView=UIView(frame: CGRect(x: 0, y: 0, width: 250, height: 250))
+        }
         
         myNewView.addSubview(imageView)
         
         if let scalingCell = cell as? ScalingCarouselCell {
-            scalingCell.clipsToBounds = true
+            scalingCell.clipsToBounds = false
             scalingCell.mainView.addSubview(myNewView)
         }
         
@@ -255,10 +268,10 @@ extension CarouselDatasource: UICollectionViewDataSource {
             cell.setNeedsLayout()
             cell.layoutIfNeeded()
         }
-
+        
         cell.layer.masksToBounds = false
-//        cell.layer.cornerRadius = cell.frame.size.width / 2
-        cell.clipsToBounds = true;
+        //        cell.layer.cornerRadius = cell.frame.size.width / 2
+        cell.clipsToBounds = false;
         
         return cell
     }

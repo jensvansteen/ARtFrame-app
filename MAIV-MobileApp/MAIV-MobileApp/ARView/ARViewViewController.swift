@@ -45,7 +45,7 @@ class ARViewViewController: UIViewController, ARSCNViewDelegate {
         
      
       
-        let CVC = childViewControllers.last as! OverVIewARViewController
+        let CVC = children.last as! OverVIewARViewController
         CVC.scannendPainting = scannendPainting!
         CVC.updateSelf()
     }
@@ -101,7 +101,7 @@ class ARViewViewController: UIViewController, ARSCNViewDelegate {
         getData()
         
         NotificationCenter.default.addObserver(forName: .AVPlayerItemDidPlayToEndTime, object: self.player.currentItem, queue: .main) { _ in
-            self.player.seek(to: kCMTimeZero)
+            self.player.seek(to: CMTime.zero)
             self.player.play()
         }
         

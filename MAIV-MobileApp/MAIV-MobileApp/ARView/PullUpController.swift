@@ -264,7 +264,7 @@ extension UIViewController {
      - parameter pullUpController: the pull up controller to add as a child of the current view controller.
      */
     open func addPullUpController(_ pullUpController: PullUpController) {
-        addChildViewController(pullUpController)
+        addChild(pullUpController)
         
         pullUpController.view.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(pullUpController.view)

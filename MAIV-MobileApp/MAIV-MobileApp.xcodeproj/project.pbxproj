@@ -44,7 +44,6 @@
 		33C8FCC720D1D48100E4988E /* artists.json in Resources */ = {isa = PBXBuildFile; fileRef = 33C8FCC620D1D48100E4988E /* artists.json */; };
 		33C8FCD120D1F3BA00E4988E /* p00001.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 33C8FCD020D1F3AA00E4988E /* p00001.mp4 */; };
 		33C8FCD320D2103500E4988E /* StickerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C8FCD220D2103500E4988E /* StickerCollectionViewCell.swift */; };
-		48AD8194EBC1E4AAC00F3828 /* Pods_MAIV_MobileApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64D5F944A74A4741D2E11477 /* Pods_MAIV_MobileApp.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -99,7 +98,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				48AD8194EBC1E4AAC00F3828 /* Pods_MAIV_MobileApp.framework in Frameworks */,
 				142351E6A6C788AA5B86E7A7 /* Pods_ARtFrame.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -287,6 +285,7 @@
 				TargetAttributes = {
 					3393E27420C7B01A0087844B = {
 						CreatedOnToolsVersion = 9.4;
+						LastSwiftMigration = 1000;
 					};
 				};
 			};
@@ -474,7 +473,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -528,7 +527,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -552,7 +551,7 @@
 				GCC_THREADSAFE_STATICS = YES;
 				GCC_UNROLL_LOOPS = NO;
 				INFOPLIST_FILE = "MAIV-MobileApp/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -560,7 +559,7 @@
 				PRESERVE_DEAD_CODE_INITS_AND_TERMS = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "team7.maivApp.MAIV-MobileApp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -582,7 +581,7 @@
 				GCC_THREADSAFE_STATICS = YES;
 				GCC_UNROLL_LOOPS = NO;
 				INFOPLIST_FILE = "MAIV-MobileApp/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -591,7 +590,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "team7.maivApp.MAIV-MobileApp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

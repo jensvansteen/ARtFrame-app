@@ -52,14 +52,15 @@ class OverVIewARViewController: PullUpController, UICollectionViewDelegate, UICo
     @IBOutlet var questionCollection: UICollectionView!
     @IBOutlet var goBackView: UIView!
     @IBOutlet var goGuidesButton: UIButton!
+    @IBOutlet var questionVIew: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         mainView.roundCorners([.topLeft, .topRight], radius: 40)
         quistionView.roundCorners([.topLeft, .topRight], radius: 40)
-     
-
+        
+        questionCollection.estimatedItemSize = CGSizeMake(1.f, 1.f);
         // Do any additional setup after loading the view.
         
         self.didMoveToStickyPoint = { point in
@@ -204,11 +205,19 @@ class OverVIewARViewController: PullUpController, UICollectionViewDelegate, UICo
     }
     
     func showAnswer(pat: IndexPath) {
+        questionVIew.isHidden = false
       let guideid = selectedGuide!.id
       let questionObject = scannendPainting!.questions[pat.row]
       var answerForQes = "niets"
       quistion.text = questionObject.question
-      quistion.layer.cornerRadius = 15
+//      quistion.translatesAutoresizingMaskIntoConstraints = false
+//        print(quistion.text.frame.width);
+//      quistion.widthAnchor.constraint(equalToConstant: 280).isActive = true
+//      quistionView.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
+//      quistion.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 60).isActive = true
+//      quistion.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+      questionVIew.layer.cornerRadius = self.quistion.frame.height * 0.9
+        print("het is dus zo breed\(quistion.frame.width)");
         switch guideid {
         case "g01":
             answerForQes = questionObject.g01

@@ -40,7 +40,7 @@ class MapViewViewController: UIViewController, MKMapViewDelegate {
         
         let centrum = CLLocationCoordinate2D(latitude: 51.923592, longitude: 4.468323)
         rotterdamMap.centerCoordinate = centrum
-        rotterdamMap.region = MKCoordinateRegionMakeWithDistance(centrum, 2000, 2000)
+        rotterdamMap.region = MKCoordinateRegion.init(center: centrum, latitudinalMeters: 2000, longitudinalMeters: 2000)
         
         
     }

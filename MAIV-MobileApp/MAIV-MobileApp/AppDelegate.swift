@@ -16,8 +16,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var initialScrollDone = false
 
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+//         Override point for customization after application launch.
         
        let onBoardingDone = UserDefaults.standard.bool(forKey: "boardingDone")
 
@@ -115,11 +115,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let deleteFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "ActiveGuide")
         let deleteFetch2 = NSFetchRequest<NSFetchRequestResult>(entityName: "ActiveTour")
+        let deleteFetch3 = NSFetchRequest<NSFetchRequestResult>(entityName: "PaintingChecked")
         let deleteRequest = NSBatchDeleteRequest(fetchRequest: deleteFetch)
         let deleteRequest2 = NSBatchDeleteRequest(fetchRequest: deleteFetch2)
+        let deleteRequest3 = NSBatchDeleteRequest(fetchRequest: deleteFetch3)
         
         do {
             try context.execute(deleteRequest)
+            try context.save()
+        } catch {
+            print ("There was an error")
+        }
+        
+        do {
+            try context.execute(deleteRequest3)
             try context.save()
         } catch {
             print ("There was an error")
