@@ -259,6 +259,8 @@ class OverVIewARViewController: PullUpController, UICollectionViewDelegate, UICo
         
         topView.isHidden = true
         chatView.isHidden = false
+        topView.isUserInteractionEnabled = false
+        chatView.isUserInteractionEnabled = true
         mainView.backgroundColor = UIColor(red:0.90, green:0.90, blue:0.90, alpha:1.00)
     }
     
@@ -267,16 +269,20 @@ class OverVIewARViewController: PullUpController, UICollectionViewDelegate, UICo
         
         chatView.isHidden = true
         topView.isHidden = false
+        topView.isUserInteractionEnabled = true
+        chatView.isUserInteractionEnabled = false
         mainView.backgroundColor = UIColor.white
     }
-    
+
 
     @IBAction func moveUp(_ sender: UIButton) {
-      print("moveUp")
+      self.pullUpControllerMoveToVisiblePoint(392, completion: nil)
+      self.popUp()
     }
     
     @IBAction func moveDown(_ sender: UIButton) {
-        print("moveDown")
+        self.pullUpControllerMoveToVisiblePoint(85, completion: nil)
+        self.dropDown()
     }
     /*
     // MARK: - Navigation
