@@ -31,6 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     }
     
+  
     func launchStoryboard(storyboard: String) {
         let storyboard = UIStoryboard(name: storyboard, bundle: nil)
         let controller = storyboard.instantiateInitialViewController()
@@ -62,9 +63,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         self.saveContext()
     }
-    
-  
-    
     
     lazy var persistentContainer: NSPersistentContainer = {
         /*

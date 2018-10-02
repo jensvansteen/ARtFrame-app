@@ -936,7 +936,10 @@
                                                     <constraint firstAttribute="height" constant="41" id="bIs-ZD-rdz"/>
                                                     <constraint firstAttribute="width" constant="41" id="gwk-yY-f6T"/>
                                                 </constraints>
-                                                <state key="normal" title="Button" image="muteButton"/>
+                                                <state key="normal" title="Button" image="sound-on"/>
+                                                <connections>
+                                                    <action selector="muteSound:" destination="OQy-V1-TFg" eventType="touchUpInside" id="6Pd-pn-wmc"/>
+                                                </connections>
                                             </button>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="quistonHolder" translatesAutoresizingMaskIntoConstraints="NO" id="0bm-Rs-wP7">
                                                 <rect key="frame" x="18" y="90" width="265" height="39"/>
@@ -995,6 +998,7 @@
                         <outlet property="guideImage" destination="yvj-dQ-fal" id="CsO-oO-p0d"/>
                         <outlet property="guideName" destination="Kls-21-3t9" id="CbH-Hq-RII"/>
                         <outlet property="mainView" destination="keu-tp-aag" id="n1h-dk-iiX"/>
+                        <outlet property="muteButton" destination="oL4-CH-XtQ" id="9FE-TT-x3x"/>
                         <outlet property="nameArtist" destination="IkG-b0-3PH" id="S36-xr-UOn"/>
                         <outlet property="nameArtwork" destination="Gl6-Cm-RFA" id="IO5-IL-Awj"/>
                         <outlet property="questionCollection" destination="n89-ur-zgS" id="dDL-bJ-7Ld"/>
@@ -1109,12 +1113,12 @@
         <image name="imessage" width="224" height="48"/>
         <image name="infoButton" width="36" height="36"/>
         <image name="messenger" width="224" height="48"/>
-        <image name="muteButton" width="49" height="49"/>
         <image name="p00001lockedcollection" width="101" height="134"/>
         <image name="p00003unlockedtour" width="58" height="78"/>
         <image name="questionButton" width="30" height="30"/>
         <image name="quistonHolder" width="265" height="39"/>
         <image name="scanButton" width="58" height="58"/>
+        <image name="sound-on" width="49" height="49"/>
         <image name="stickerIcon" width="243" height="242"/>
     </resources>
     <inferredMetricsTieBreakers>

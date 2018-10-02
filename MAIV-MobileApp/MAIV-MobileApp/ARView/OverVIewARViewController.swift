@@ -53,6 +53,7 @@ class OverVIewARViewController: PullUpController, UICollectionViewDelegate, UICo
     @IBOutlet var goBackView: UIView!
     @IBOutlet var goGuidesButton: UIButton!
     @IBOutlet var questionVIew: UIView!
+    @IBOutlet var muteButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -74,9 +75,33 @@ class OverVIewARViewController: PullUpController, UICollectionViewDelegate, UICo
                 self.dropDown()
             }
         }
+       
+        
+    
+        setMuteButton()
+            
         
         selectVoice()
        
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        siri.stopSpeaking(at: .word)
+    }
+    
+    func setMuteButton() {
+        let muted = UserDefaultPresent(key: "muted")
+        
+        if !muted {
+            UserDefaults.standard.set(true, forKey: "muted")
+        }
+        
+        let muteStatus = UserDefaults.standard.bool(forKey: "muted")
+        muteStatus ? muteButton.setImage(UIImage(named: "sound-on"), for: UIControl.State.normal) : muteButton.setImage(UIImage(named: "sound-off"), for: UIControl.State.normal)
+    }
+    
+    func UserDefaultPresent(key: String) -> Bool {
+        return UserDefaults.standard.object(forKey: "muted") != nil
     }
     
     
@@ -241,7 +266,9 @@ class OverVIewARViewController: PullUpController, UICollectionViewDelegate, UICo
         }
         
         answer.text = answerForQes
-        sayWords(what: answerForQes)
+        if (UserDefaults.standard.bool(forKey: "muted")) {
+           sayWords(what: answerForQes)
+        }
     }
     
     @IBAction func goToGuides(_ sender: Any) {
@@ -284,6 +311,21 @@ class OverVIewARViewController: PullUpController, UICollectionViewDelegate, UICo
         self.pullUpControllerMoveToVisiblePoint(85, completion: nil)
         self.dropDown()
     }
+    
+    
+    @IBAction func muteSound(_ sender: UIButton) {
+        
+        if UserDefaultPresent(key: "muted") {
+            siri.stopSpeaking(at: .word)
+            let muteStatus = UserDefaults.standard.bool(forKey: "muted")
+            UserDefaults.standard.set(!muteStatus, forKey: "muted")
+        }
+        
+        setMuteButton()
+    }
+    
+ 
+    
     /*
     // MARK: - Navigation
 
