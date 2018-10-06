@@ -941,13 +941,34 @@
                                                     <action selector="muteSound:" destination="OQy-V1-TFg" eventType="touchUpInside" id="6Pd-pn-wmc"/>
                                                 </connections>
                                             </button>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="quistonHolder" translatesAutoresizingMaskIntoConstraints="NO" id="0bm-Rs-wP7">
+                                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="quistonHolder" translatesAutoresizingMaskIntoConstraints="NO" id="0bm-Rs-wP7">
                                                 <rect key="frame" x="18" y="90" width="265" height="39"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="39" id="eea-2w-gZM"/>
                                                     <constraint firstAttribute="width" constant="265" id="zvR-R9-0U2"/>
                                                 </constraints>
                                             </imageView>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nXe-Nw-iLq">
+                                                <rect key="frame" x="20" y="89.5" width="263" height="42"/>
+                                                <color key="backgroundColor" red="0.89803921568627454" green="0.89803921568627454" blue="0.89803921568627454" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="42" id="7r6-KK-Wz4"/>
+                                                </constraints>
+                                                <color key="textColor" red="0.10196078431372549" green="0.10196078431372549" blue="0.10196078431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="20"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="searchForQuestion:" destination="OQy-V1-TFg" eventType="editingChanged" id="cc7-30-Ys8"/>
+                                                    <action selector="startSearching:" destination="OQy-V1-TFg" eventType="editingDidBegin" id="6I2-Dj-Zme"/>
+                                                    <outlet property="delegate" destination="OQy-V1-TFg" id="4At-9R-ekn"/>
+                                                </connections>
+                                            </textField>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -956,9 +977,12 @@
                                             <constraint firstItem="n89-ur-zgS" firstAttribute="leading" secondItem="yYK-h5-EFG" secondAttribute="leading" constant="5" id="Ig3-Lf-Mkl"/>
                                             <constraint firstItem="n89-ur-zgS" firstAttribute="top" secondItem="yYK-h5-EFG" secondAttribute="top" constant="30" id="LOP-Zu-2i4"/>
                                             <constraint firstItem="0bm-Rs-wP7" firstAttribute="top" secondItem="n89-ur-zgS" secondAttribute="bottom" constant="10" id="XhN-3z-fqS"/>
+                                            <constraint firstItem="nXe-Nw-iLq" firstAttribute="leading" secondItem="yYK-h5-EFG" secondAttribute="leading" constant="20" id="aAE-BE-j3W"/>
+                                            <constraint firstItem="oL4-CH-XtQ" firstAttribute="centerY" secondItem="nXe-Nw-iLq" secondAttribute="centerY" id="e6k-sc-evg"/>
                                             <constraint firstAttribute="height" constant="148" id="mhT-ms-UsC"/>
                                             <constraint firstAttribute="trailing" secondItem="n89-ur-zgS" secondAttribute="trailing" constant="5" id="ojk-RP-e8l"/>
                                             <constraint firstItem="oL4-CH-XtQ" firstAttribute="top" secondItem="n89-ur-zgS" secondAttribute="bottom" constant="10" id="p4h-78-Rnb"/>
+                                            <constraint firstItem="oL4-CH-XtQ" firstAttribute="leading" secondItem="nXe-Nw-iLq" secondAttribute="trailing" constant="26" id="s2b-W9-XO9"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -1005,6 +1029,7 @@
                         <outlet property="questionVIew" destination="USB-hO-6YG" id="cF0-Hw-YDg"/>
                         <outlet property="quistion" destination="Wmw-XJ-VAB" id="Nhh-5k-xkS"/>
                         <outlet property="quistionView" destination="yYK-h5-EFG" id="Tac-YD-2Vf"/>
+                        <outlet property="searchQuestion" destination="nXe-Nw-iLq" id="yuj-St-X4z"/>
                         <outlet property="topView" destination="WFk-97-4Yd" id="Ejy-mH-D6Q"/>
                     </connections>
                 </viewController>
