@@ -37,9 +37,7 @@ class ARViewViewController: UIViewController, ARSCNViewDelegate {
             let collectedPainting = PaintingChecked(context: context)
             collectedPainting.paintingId = scannendPainting!.id
             print(checkedPaintings.count)
-            print("die voeg ik lekker toe")
         } else {
-            print("Al gehad")
             print(checkedPaintings.count)
         }
         
@@ -53,9 +51,9 @@ class ARViewViewController: UIViewController, ARSCNViewDelegate {
     @IBOutlet var sceneView: ARSCNView!
     
    
-    let contentFor = [
-        "piettrot" : ["artWorkName": "Pierrot and Guitar", "artistName": "Gino Severini"]
-    ]
+//    let contentFor = [
+//        "piettrot" : ["artWorkName": "Pierrot and Guitar", "artistName": "Gino Severini"]
+//    ]
     
     let updateQueue = DispatchQueue(label: Bundle.main.bundleIdentifier! +
         ".serialSceneKitQueue")
@@ -74,14 +72,7 @@ class ARViewViewController: UIViewController, ARSCNViewDelegate {
         
         addPullUpController()
         
-        // Show statistics such as fps and timing information
-//        sceneView.showsStatistics = true
-        
-        // Create a new scene
         let scene = SCNScene()
-        
-        // Set the scene to the view
-        
         
         sceneView.scene = scene
         
@@ -100,6 +91,7 @@ class ARViewViewController: UIViewController, ARSCNViewDelegate {
         
         getData()
         
+        //Loop video of artwork
         NotificationCenter.default.addObserver(forName: .AVPlayerItemDidPlayToEndTime, object: self.player.currentItem, queue: .main) { _ in
             self.player.seek(to: CMTime.zero)
             self.player.play()
@@ -138,6 +130,7 @@ class ARViewViewController: UIViewController, ARSCNViewDelegate {
         
     }
     
+    //Add view with information about work
     private func addPullUpController() {
         guard
             let pullUpController = UIStoryboard(name: "Main", bundle: nil)

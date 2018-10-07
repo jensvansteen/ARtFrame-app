@@ -21,11 +21,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
        let onBoardingDone = UserDefaults.standard.bool(forKey: "boardingDone")
 
+        //Only show onboarding the first time user uses the app
         if onBoardingDone {
             launchStoryboard(storyboard: "Main")
         } else {
             launchStoryboard(storyboard: "OnBoarding")
         }
+        
+          launchStoryboard(storyboard: "OnBoarding")
         
         return true
     

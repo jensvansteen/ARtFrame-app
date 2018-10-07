@@ -63,10 +63,6 @@ class PickTourViewController: UIViewController, UITableViewDelegate, UITableView
             cell.newView.isHidden = false
         }
         
-        
-        
-    
-
 
         cell.tourTitle.text = currentTour.title
         cell.tourText.text = currentTour.text
@@ -93,10 +89,7 @@ class PickTourViewController: UIViewController, UITableViewDelegate, UITableView
         return cell
     }
     
-    
 
-
-    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation

@@ -176,7 +176,12 @@ class GuideSelectionViewController: UIViewController {
         context.delete(tourInSelection)
         
         initialScrollDone = false
-        
+        guard let parentViewController = self.navigationController?.viewControllers[0] as? MapViewViewController else {
+            print("Het werkt hier niet")
+            return
+        }
+        parentViewController.selectedGuide = nil
+        parentViewController.selectedTour = nil
         self.navigationController?.popViewController(animated: true)
     }
     
@@ -242,6 +247,7 @@ extension CarouselDatasource: UICollectionViewDataSource {
         
         var myNewView = UIView(frame: CGRect(x: 0, y: 0, width: 250, height: 250))
         
+        //Change size of guides to size of screen
         switch screenSize {
         case 320:
             imageView.frame = CGRect(x: 3, y: 0, width: 250, height: 250)

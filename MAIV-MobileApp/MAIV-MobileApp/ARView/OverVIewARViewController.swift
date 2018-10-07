@@ -24,22 +24,18 @@ extension UIView {
 
 class OverVIewARViewController: PullUpController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UITextFieldDelegate {
     
-//    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-    
     var selectedGuide : Guide?
     var selectedTour : Tour?
     var scannendPainting : Painting?
     
     var searchFilter: String?
     
-//    var checkedPaintings: [PaintingChecked] = []
-    
     var voiceToUse : AVSpeechSynthesisVoice?
     
     var siri = AVSpeechSynthesizer()
     
     var keyboardHeight: CGFloat = 0
-
+    
     @IBOutlet var mainView: UIView!
     @IBOutlet var topView: UIView!
     @IBOutlet var bottomView: UIView!
@@ -56,7 +52,7 @@ class OverVIewARViewController: PullUpController, UICollectionViewDelegate, UICo
     @IBOutlet var questionCollection: UICollectionView!
     @IBOutlet var goBackView: UIView!
     @IBOutlet var goGuidesButton: UIButton!
-    @IBOutlet var questionVIew: UIView!
+    @IBOutlet var questionView: UIView!
     @IBOutlet var muteButton: UIButton!
     @IBOutlet var searchQuestion: UITextField!
     var filtered: [QAndA] = []
@@ -70,10 +66,6 @@ class OverVIewARViewController: PullUpController, UICollectionViewDelegate, UICo
         
         // Do any additional setup after loading the view.
         
-//        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow),
-//            name: UIResponder.keyboardWillShowNotification,
-//            object: nil
-//        )
         
         self.didMoveToStickyPoint = { point in
             print("didMoveToStickyPoint \(point)")
@@ -87,15 +79,14 @@ class OverVIewARViewController: PullUpController, UICollectionViewDelegate, UICo
                 self.dropDown()
             }
         }
-       
+        
         setMuteButton()
         
         selectVoice()
         
         setupText()
-       
         
-           NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
     }
     
     
@@ -104,35 +95,37 @@ class OverVIewARViewController: PullUpController, UICollectionViewDelegate, UICo
             keyboardHeight = keyboardSize.height
             self.pullUpControllerMoveToVisiblePoint(392 + keyboardHeight, completion: nil)
         }
+        // Stop user from closing view while typing
+        enableDragging = false
     }
-
+    
+    // setup UITextField
     func setupText() {
         
-    let Attributes = [NSAttributedString.Key.foregroundColor: UIColor(red:0.10, green:0.10, blue:0.10, alpha:1.00), NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14)]
-    searchQuestion.returnKeyType = .search
-    searchQuestion.attributedPlaceholder = NSAttributedString(string: "Stel jouw vraag...", attributes: Attributes)
+        let Attributes = [NSAttributedString.Key.foregroundColor: UIColor(red:0.10, green:0.10, blue:0.10, alpha:1.00), NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14)]
+        searchQuestion.returnKeyType = .search
+        searchQuestion.attributedPlaceholder = NSAttributedString(string: "Stel jouw vraag...", attributes: Attributes)
         
-    let overlayButton = UIButton(type: .custom)
-    overlayButton.setImage(UIImage(named: "arrow"), for: UIControl.State.normal)
-    overlayButton.addTarget(self, action: #selector(displayAnswers(_ :)), for: .touchUpInside)
-    overlayButton.frame = CGRect(x: 0, y: 0, width: 50, height: 18)
+        let overlayButton = UIButton(type: .custom)
+        overlayButton.setImage(UIImage(named: "arrow"), for: UIControl.State.normal)
+        overlayButton.addTarget(self, action: #selector(displayAnswers(_ :)), for: .touchUpInside)
+        overlayButton.frame = CGRect(x: 0, y: 0, width: 50, height: 18)
         
-    let leftPadding = UIView(frame: CGRect(x: 0, y: 0, width: 12, height: 20))
-
-    
-    searchQuestion.leftView = leftPadding;
-    searchQuestion.leftViewMode = .always;
-    searchQuestion.rightView = overlayButton;
-    searchQuestion.rightViewMode = .always;
+        let leftPadding = UIView(frame: CGRect(x: 0, y: 0, width: 12, height: 20))
+        
+        
+        searchQuestion.leftView = leftPadding;
+        searchQuestion.leftViewMode = .always;
+        searchQuestion.rightView = overlayButton;
+        searchQuestion.rightViewMode = .always;
     }
-
+    
     override func viewWillDisappear(_ animated: Bool) {
         siri.stopSpeaking(at: .word)
     }
     
     @objc func displayAnswers(_ sender: UIButton) {
-        self.pullUpControllerMoveToVisiblePoint(392, completion: nil)
-        searchQuestion.resignFirstResponder()
+        closeTextField()
     }
     
     func setMuteButton() {
@@ -150,7 +143,7 @@ class OverVIewARViewController: PullUpController, UICollectionViewDelegate, UICo
         return UserDefaults.standard.object(forKey: "muted") != nil
     }
     
-    
+    //Select right voice for guide
     func selectVoice() {
         
         var womanVoice = false
@@ -181,9 +174,6 @@ class OverVIewARViewController: PullUpController, UICollectionViewDelegate, UICo
     }
     
     override func viewWillAppear(_ animated: Bool) {
-//         getData()
-        
-        
         setUpUi()
     }
     
@@ -199,6 +189,7 @@ class OverVIewARViewController: PullUpController, UICollectionViewDelegate, UICo
         return topView.frame.height
     }
     
+    
     func ChangeLabel(artworkNameToChange : String, artistNameToChange: String){
         
         DispatchQueue.main.async { // Make sure you're on the main thread here
@@ -206,10 +197,9 @@ class OverVIewARViewController: PullUpController, UICollectionViewDelegate, UICo
             self.nameArtist.text = artistNameToChange
         }
         
-        
-        
     }
     
+    //Show artwork name when frame scannend
     func updateSelf() {
         DispatchQueue.main.async { // Make sure you're on the main thread here
             let artistName = artists.filter { $0.id == self.scannendPainting!.artistid}[0]
@@ -226,30 +216,27 @@ class OverVIewARViewController: PullUpController, UICollectionViewDelegate, UICo
             let imageName = "small-\(selectedGuide!.id)"
             guideImage.image =  UIImage(named: imageName)
         } else {
-            goBackView.isHidden = false
+            goGuidesButton.isHidden = false
             guideName.isHidden = true
             guideImage.isHidden = true
             chatView.isHidden = true
         }
-
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         var total = 0
         
+        //CollectionView with answers filterd to what is in the textfield
         if scannendPainting != nil && selectedGuide != nil {
             filtered = (scannendPainting?.questions)!
-            print("de filter \(filtered)")
-            print("doet het iets \(scannendPainting?.questions)")
-            print("vlak erna")
             if searchQuestion.text != "" {
                 filtered = (scannendPainting?.questions.filter { $0.question.lowercased().contains("\(searchQuestion!.text!)") })!
-                print("Hier is de gefilterede data boy \(filtered)")
             }
             let questionNumber = filtered
             total = questionNumber.count
         } else {
-           total = 0
+            total = 0
         }
         
         return total
@@ -258,15 +245,8 @@ class OverVIewARViewController: PullUpController, UICollectionViewDelegate, UICo
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "quistionCell", for: indexPath) as! QuestionUICollectionViewCell
         
-        
-        
-//        print(scannendPainting?.questions[indexPath].["question"])
-        
-        
         if selectedGuide != nil {
-           
-           
-         
+            
             let qes = filtered[indexPath.row].question
             
             cell.questionCell.setTitle(qes, for: .normal)
@@ -277,12 +257,10 @@ class OverVIewARViewController: PullUpController, UICollectionViewDelegate, UICo
             }
         }
         
-        
-       
-    
         return cell
     }
     
+    //Dynamic size cells in CollectionView according to length of text
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if filtered[indexPath.row].question != nil {
             
@@ -300,12 +278,12 @@ class OverVIewARViewController: PullUpController, UICollectionViewDelegate, UICo
     }
     
     func showAnswer(pat: IndexPath) {
-        questionVIew.isHidden = false
-      let guideid = selectedGuide!.id
-      let questionObject = filtered[pat.row]
-      var answerForQes = "niets"
-      quistion.text = questionObject.question
-      questionVIew.layer.cornerRadius = self.quistion.frame.height * 0.9
+        questionView.isHidden = false
+        let guideid = selectedGuide!.id
+        let questionObject = filtered[pat.row]
+        var answerForQes = "niets"
+        quistion.text = questionObject.question
+        questionView.layer.cornerRadius = self.quistion.frame.height * 0.9
         print("het is dus zo breed\(quistion.frame.width)");
         switch guideid {
         case "g01":
@@ -320,27 +298,19 @@ class OverVIewARViewController: PullUpController, UICollectionViewDelegate, UICo
         
         answer.text = answerForQes
         if (UserDefaults.standard.bool(forKey: "muted")) {
-           sayWords(what: answerForQes)
+            sayWords(what: answerForQes)
         }
     }
     
     @IBAction func goToGuides(_ sender: Any) {
-        print("kom ga is naar de gidsen")
+        print("does something")
     }
-    
-    func printSome() {
-        print("whatss uuuuuupppp")
-    }
-    
     
     func popUp() {
-        print("check yourself")
-        
         
         topView.isHidden = true
         chatView.isHidden = false
         topView.isUserInteractionEnabled = false
-        chatView.isUserInteractionEnabled = true
         mainView.backgroundColor = UIColor(red:0.90, green:0.90, blue:0.90, alpha:1.00)
     }
     
@@ -350,19 +320,20 @@ class OverVIewARViewController: PullUpController, UICollectionViewDelegate, UICo
         chatView.isHidden = true
         topView.isHidden = false
         topView.isUserInteractionEnabled = true
-        chatView.isUserInteractionEnabled = false
         mainView.backgroundColor = UIColor.white
     }
-
-
+    
+    
     @IBAction func moveUp(_ sender: UIButton) {
-      self.pullUpControllerMoveToVisiblePoint(392, completion: nil)
-      self.popUp()
+        self.pullUpControllerMoveToVisiblePoint(392, completion: nil)
+        self.popUp()
     }
     
     @IBAction func moveDown(_ sender: UIButton) {
-        self.pullUpControllerMoveToVisiblePoint(85, completion: nil)
-        self.dropDown()
+        if enableDragging {
+            self.pullUpControllerMoveToVisiblePoint(85, completion: nil)
+            self.dropDown()
+        }
     }
     
     
@@ -377,39 +348,41 @@ class OverVIewARViewController: PullUpController, UICollectionViewDelegate, UICo
         setMuteButton()
     }
     
- 
+    
     @IBAction func startSearching(_ sender: UITextField) {
         
         questionCollection.reloadData()
-        
-        print("the height is \(keyboardHeight)");
     }
     
     
     @IBAction func searchForQuestion(_ sender: UITextField) {
         
         if selectedGuide != nil {
-       
-         self.questionCollection.reloadData()
+            
+            self.questionCollection.reloadData()
         }
         
-        print(filtered)
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        self.pullUpControllerMoveToVisiblePoint(392, completion: nil)
-        textField.resignFirstResponder()
+        closeTextField()
         return true
+    }
+    
+    func closeTextField() {
+        self.pullUpControllerMoveToVisiblePoint(392, completion: nil)
+        searchQuestion.resignFirstResponder()
+        enableDragging = true
     }
     
     // MARK: - Navigation
     /*
-
+     
      // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

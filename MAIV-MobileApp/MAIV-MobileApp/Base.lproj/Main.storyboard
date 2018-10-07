@@ -206,7 +206,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     </arscnView>
                     <navigationItem key="navigationItem" title="Scannen" id="ZbE-kP-Sro">
-                        <barButtonItem key="rightBarButtonItem" image="questionButton" largeContentSizeImage="questionButton" id="1G7-3R-fOk">
+                        <barButtonItem key="rightBarButtonItem" image="questionButton" landscapeImage="questionButton" largeContentSizeImage="questionButton" id="1G7-3R-fOk">
                             <connections>
                                 <segue destination="Y3K-s4-GxL" kind="show" id="N7p-Zk-VZW"/>
                             </connections>
@@ -709,12 +709,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NsX-mr-ihY" userLabel="goToToursView">
-                                <rect key="frame" x="16" y="36" width="280" height="31"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NsX-mr-ihY" userLabel="goToToursView">
+                                <rect key="frame" x="16" y="36" width="359" height="31"/>
                                 <subviews>
-                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dWb-RO-Tmo">
-                                        <rect key="frame" x="0.0" y="0.0" width="280" height="31"/>
+                                    <button hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dWb-RO-Tmo">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="31"/>
                                         <color key="backgroundColor" red="0.99215686274509807" green="0.42745098039215684" blue="0.56470588235294117" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="300" id="LIp-W0-4Ot"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                         <state key="normal" title="Deel van de Muziek tour"/>
                                         <userDefinedRuntimeAttributes>
@@ -727,11 +730,22 @@
                                             <segue destination="ZIW-sf-DMg" kind="show" id="f0l-6V-94w"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LnQ-aI-RF7">
+                                        <rect key="frame" x="318" y="8" width="15" height="15"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="15" id="dqc-yj-FZ6"/>
+                                            <constraint firstAttribute="width" constant="15" id="uZp-k3-VyG"/>
+                                        </constraints>
+                                        <state key="normal" image="closeIcon"/>
+                                        <connections>
+                                            <action selector="moveDown:" destination="OQy-V1-TFg" eventType="touchUpInside" id="PG6-92-rKy"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="280" id="3wM-bc-X6F"/>
+                                    <constraint firstAttribute="trailing" secondItem="LnQ-aI-RF7" secondAttribute="trailing" constant="26" id="6Ii-IQ-cLn"/>
+                                    <constraint firstItem="LnQ-aI-RF7" firstAttribute="centerY" secondItem="dWb-RO-Tmo" secondAttribute="centerY" id="8Ut-nP-xaj"/>
                                     <constraint firstItem="dWb-RO-Tmo" firstAttribute="leading" secondItem="NsX-mr-ihY" secondAttribute="leading" id="OJF-nR-69k"/>
-                                    <constraint firstAttribute="trailing" secondItem="dWb-RO-Tmo" secondAttribute="trailing" id="PgB-BI-Y0l"/>
                                     <constraint firstAttribute="height" constant="31" id="QPy-8F-EcJ"/>
                                     <constraint firstAttribute="bottom" secondItem="dWb-RO-Tmo" secondAttribute="bottom" id="VtO-Ch-ssR"/>
                                     <constraint firstItem="dWb-RO-Tmo" firstAttribute="top" secondItem="NsX-mr-ihY" secondAttribute="top" id="fRz-1Y-Qv1"/>
@@ -740,8 +754,8 @@
                             <view hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="810-tb-neT">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="244"/>
                                 <subviews>
-                                    <view hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="USB-hO-6YG" userLabel="questionView">
-                                        <rect key="frame" x="335" y="68" width="5" height="6"/>
+                                    <view hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="USB-hO-6YG" userLabel="questionView">
+                                        <rect key="frame" x="335" y="68" width="20" height="40"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wmw-XJ-VAB">
                                                 <rect key="frame" x="10" y="10" width="0.0" height="20"/>
@@ -780,13 +794,6 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LnQ-aI-RF7">
-                                        <rect key="frame" x="334" y="25" width="16" height="22"/>
-                                        <state key="normal" image="closeIcon"/>
-                                        <connections>
-                                            <action selector="moveDown:" destination="OQy-V1-TFg" eventType="touchUpInside" id="PG6-92-rKy"/>
-                                        </connections>
-                                    </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gids Karel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kls-21-3t9">
                                         <rect key="frame" x="66" y="25" width="74.5" height="18"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -803,17 +810,15 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="LnQ-aI-RF7" firstAttribute="top" secondItem="810-tb-neT" secondAttribute="top" constant="25" id="36D-g2-YhU"/>
                                     <constraint firstItem="aoW-QY-zmb" firstAttribute="leading" secondItem="810-tb-neT" secondAttribute="leading" constant="20" id="3gF-7O-Wss"/>
                                     <constraint firstAttribute="trailing" secondItem="USB-hO-6YG" secondAttribute="trailing" constant="20" id="3pg-yI-XdX"/>
                                     <constraint firstItem="aoW-QY-zmb" firstAttribute="top" secondItem="USB-hO-6YG" secondAttribute="bottom" constant="13" id="4PM-zP-mWg"/>
-                                    <constraint firstItem="USB-hO-6YG" firstAttribute="top" secondItem="LnQ-aI-RF7" secondAttribute="bottom" constant="21" id="5UV-Lf-WIt"/>
                                     <constraint firstItem="Kls-21-3t9" firstAttribute="leading" secondItem="yvj-dQ-fal" secondAttribute="trailing" constant="12" id="8lD-aS-KX7"/>
                                     <constraint firstAttribute="height" constant="244" id="h9z-ed-08L"/>
                                     <constraint firstItem="yvj-dQ-fal" firstAttribute="top" secondItem="810-tb-neT" secondAttribute="top" constant="17" id="hRu-3A-Pdh"/>
                                     <constraint firstItem="Kls-21-3t9" firstAttribute="top" secondItem="810-tb-neT" secondAttribute="top" constant="25" id="r3H-kV-y4y"/>
+                                    <constraint firstItem="USB-hO-6YG" firstAttribute="top" secondItem="810-tb-neT" secondAttribute="top" constant="68" id="rmx-lD-l1b"/>
                                     <constraint firstItem="yvj-dQ-fal" firstAttribute="leading" secondItem="810-tb-neT" secondAttribute="leading" constant="20" id="t8V-C9-8Aa"/>
-                                    <constraint firstAttribute="trailing" secondItem="LnQ-aI-RF7" secondAttribute="trailing" constant="25" id="vW0-vb-fLm"/>
                                 </constraints>
                             </view>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WFk-97-4Yd">
@@ -899,7 +904,7 @@
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f9k-oY-vJ5">
-                                                                    <rect key="frame" x="3" y="0.0" width="154" height="40"/>
+                                                                    <rect key="frame" x="3" y="0.0" width="45" height="40"/>
                                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                                                     <state key="normal" title="Button"/>
                                                                     <connections>
@@ -1005,6 +1010,7 @@
                             <constraint firstItem="810-tb-neT" firstAttribute="top" secondItem="keu-tp-aag" secondAttribute="top" id="myC-Zw-VY9"/>
                             <constraint firstItem="810-tb-neT" firstAttribute="leading" secondItem="GCf-1m-rve" secondAttribute="leading" id="rfL-9n-ICz"/>
                             <constraint firstItem="GOX-Qd-kCZ" firstAttribute="top" secondItem="WFk-97-4Yd" secondAttribute="bottom" id="uKq-0F-8rp"/>
+                            <constraint firstItem="GCf-1m-rve" firstAttribute="trailing" secondItem="NsX-mr-ihY" secondAttribute="trailing" id="vc8-GD-wdN"/>
                             <constraint firstItem="NsX-mr-ihY" firstAttribute="leading" secondItem="GCf-1m-rve" secondAttribute="leading" constant="16" id="wmH-cm-fj9"/>
                             <constraint firstItem="GOX-Qd-kCZ" firstAttribute="leading" secondItem="GCf-1m-rve" secondAttribute="leading" id="xva-P7-P1b"/>
                             <constraint firstItem="GCf-1m-rve" firstAttribute="trailing" secondItem="810-tb-neT" secondAttribute="trailing" id="yz2-IJ-cL3"/>
@@ -1026,7 +1032,7 @@
                         <outlet property="nameArtist" destination="IkG-b0-3PH" id="S36-xr-UOn"/>
                         <outlet property="nameArtwork" destination="Gl6-Cm-RFA" id="IO5-IL-Awj"/>
                         <outlet property="questionCollection" destination="n89-ur-zgS" id="dDL-bJ-7Ld"/>
-                        <outlet property="questionVIew" destination="USB-hO-6YG" id="cF0-Hw-YDg"/>
+                        <outlet property="questionView" destination="USB-hO-6YG" id="cF0-Hw-YDg"/>
                         <outlet property="quistion" destination="Wmw-XJ-VAB" id="Nhh-5k-xkS"/>
                         <outlet property="quistionView" destination="yYK-h5-EFG" id="Tac-YD-2Vf"/>
                         <outlet property="searchQuestion" destination="nXe-Nw-iLq" id="yuj-St-X4z"/>

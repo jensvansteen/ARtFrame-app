@@ -15,6 +15,7 @@ open class PullUpController: UIViewController {
     private var widthConstraint: NSLayoutConstraint?
     private var heightConstraint: NSLayoutConstraint?
     private var panGestureRecognizer: UIPanGestureRecognizer?
+    public var enableDragging = true
     
     /**
      The closure to execute before the view controller's view move to a sticky point.
@@ -182,7 +183,7 @@ open class PullUpController: UIViewController {
             let topConstraint = topConstraint,
             let parentViewHeight = parent?.view.frame.height
             else { return }
-        
+        if enableDragging {
         let yTranslation = gestureRecognizer.translation(in: view).y
         gestureRecognizer.setTranslation(.zero, in: view)
         
@@ -196,6 +197,7 @@ open class PullUpController: UIViewController {
         if gestureRecognizer.state == .ended {
             topConstraint.constant = nearestStickyPointY(yVelocity: gestureRecognizer.velocity(in: view).y)
             animateLayout()
+        }
         }
     }
     

@@ -15,6 +15,7 @@ class QuestionUICollectionViewCell: UICollectionViewCell {
     
     var callBack : ((UICollectionViewCell?)->Void)?
     
+    //Send information about the question back to parent
     @IBAction func getAnswer(_ sender: Any) {
         self.callBack?(self)
     }

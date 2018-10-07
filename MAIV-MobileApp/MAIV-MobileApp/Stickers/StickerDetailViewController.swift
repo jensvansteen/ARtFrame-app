@@ -28,9 +28,7 @@ class StickerDetailViewController: UIViewController {
         print(selectedSticker!)
     
         setUPTopBar()
-        
     
-
         // Do any additional setup after loading the view.
     }
     
@@ -50,6 +48,8 @@ class StickerDetailViewController: UIViewController {
         navigationItem.backBarButtonItem = UIBarButtonItem(title:"Back", style: .plain, target: nil, action: nil)
     }
     
+    
+    //Check if sticker is collected
     func setUPSticker() {
         
         if collectStatus! {

@@ -49,8 +49,6 @@ class MapViewViewController: UIViewController, MKMapViewDelegate {
         
         getData()
         
-
-        
         if activeSelectedTours.count != 0 && activeSelectedGuides.count != 0 {
             setUpTour(inTour: true)
         } else {
@@ -63,6 +61,8 @@ class MapViewViewController: UIViewController, MKMapViewDelegate {
 
     func setPins() {
         
+      rotterdamMap.removeAnnotations(rotterdamMap.annotations)
+        
         for painting in paintings {
             let paintingPoint = MKPointAnnotation()
             paintingPoint.coordinate = CLLocationCoordinate2D(latitude: painting.location.lat, longitude: painting.location.long)
@@ -72,8 +72,10 @@ class MapViewViewController: UIViewController, MKMapViewDelegate {
             checkedPainting = checkedPaintings.filter { $0.paintingId == painting.id}
             
             if checkedPainting.count == 0 {
+                paintingPoint.title = "Nog niet ontdekt"
                 paintingPoint.subtitle = "locked"
             } else {
+                paintingPoint.title = painting.name
                 paintingPoint.subtitle = "unlocked"
             }
             
@@ -85,8 +87,6 @@ class MapViewViewController: UIViewController, MKMapViewDelegate {
     
     func getCheckedPaintings() -> Int {
         
-//        var collectedCount : [PaintingChecked] = []
-        
         var paintingsInTour : [PaintingChecked] = []
         
         for paint in selectedTour!.paintings {
@@ -96,9 +96,6 @@ class MapViewViewController: UIViewController, MKMapViewDelegate {
        
         return paintingsInTour.count
     }
-    
-    
-    
     
     func setUpTour(inTour: Bool) {
         
@@ -147,6 +144,49 @@ class MapViewViewController: UIViewController, MKMapViewDelegate {
         
         
     }
+    
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        
+        let calloutView = UIView(frame: CGRect(x: -36, y: -35, width: 120, height: 50))
+        let circleView = UIView(frame: CGRect(x: 11, y: 2, width: 26, height: 26))
+       
+        calloutView.roundCorners(UIRectCorner.allCorners, radius: 20)
+        circleView.roundCorners(UIRectCorner.allCorners, radius: 100)
+        circleView.backgroundColor = UIColor.white
+
+        calloutView.backgroundColor = UIColor.white
+        
+        let infoDistance = UILabel(frame: CGRect(x: 10, y: 4, width: 100, height: 12))
+        infoDistance.text = "2 KM"
+        infoDistance.textAlignment = .center
+        infoDistance.font = UIFont.systemFont(ofSize: 13, weight: .bold)
+        
+        let infoWork = UILabel(frame: CGRect(x: 10, y: 12, width: 100, height: 35))
+        if view.annotation!.subtitle == "unlocked" {
+            infoWork.text = view.annotation!.title!
+        } else {
+            infoWork.text = "Nog niet ontdekt!"
+        }
+        infoWork.textAlignment = .center
+        infoWork.font = UIFont.systemFont(ofSize: 11, weight: .regular)
+        infoWork.numberOfLines = 0
+        
+        calloutView.addSubview(infoDistance)
+        calloutView.addSubview(infoWork)
+        view.addSubview(circleView)
+        view.addSubview(calloutView)
+     
+
+        
+    }
+    
+    func mapView(_ mapView: MKMapView, didDeselect view: MKAnnotationView) {
+        
+        for view in view.subviews {
+            view.removeFromSuperview()
+        }
+        
+    }
    
     
     @IBAction func stopTour(_ sender: UIBarButtonItem) {
@@ -155,6 +195,8 @@ class MapViewViewController: UIViewController, MKMapViewDelegate {
         let tourInSelection = activeSelectedTours[0]
         context.delete(guideInSelection)
         context.delete(tourInSelection)
+        selectedGuide = nil
+        selectedTour = nil
         
         self.viewDidLoad()
         self.viewWillAppear(true)
@@ -183,8 +225,6 @@ class MapViewViewController: UIViewController, MKMapViewDelegate {
             targetVC.selectedTour = selectedTour
         }
         
-        
     }
     
-
 }

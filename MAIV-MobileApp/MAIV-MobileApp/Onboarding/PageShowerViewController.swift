@@ -8,12 +8,25 @@
 
 import UIKit
 
+extension UIPageViewController {
+    
+    func goToNextPage(animated: Bool = true) {
+        guard let currentViewController = self.viewControllers?.first else { return }
+        guard let nextViewController = dataSource?.pageViewController(self, viewControllerAfter: currentViewController) else { return }
+        setViewControllers([nextViewController], direction: .forward, animated: animated, completion: nil)
+    }
+    
+    func goToPreviousPage(animated: Bool = true) {
+        guard let currentViewController = self.viewControllers?.first else { return }
+        guard let previousViewController = dataSource?.pageViewController(self, viewControllerBefore: currentViewController) else { return }
+        setViewControllers([previousViewController], direction: .reverse, animated: animated, completion: nil)
+    }
+    
+}
+
 class PageShowerViewController: UIViewController, UIPageViewControllerDelegate, UIPageViewControllerDataSource {
     
     var index = 0
-    
-    @IBOutlet var nextButton: UIButton!
-    
     
     var eenpageVC:UIPageViewController?{
         
@@ -23,11 +36,14 @@ class PageShowerViewController: UIViewController, UIPageViewControllerDelegate, 
             stijl.pageIndicatorTintColor = UIColor(red:0.77, green:0.77, blue:0.77, alpha:1.00)
             stijl.currentPageIndicatorTintColor = UIColor(red:0.23, green:0.74, blue:0.96, alpha:1.00)
         }
-        
+
     
     }
     
+    var viewControllers: [UIViewController] = []
+
     var storyboardIds = ["page1", "page2", "page3", "page4"]
+
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         
@@ -54,7 +70,6 @@ class PageShowerViewController: UIViewController, UIPageViewControllerDelegate, 
     }
     
     func presentationIndex(for pageViewController: UIPageViewController) -> Int {
-        print(index)
         return index
     }
 
@@ -73,14 +88,8 @@ class PageShowerViewController: UIViewController, UIPageViewControllerDelegate, 
         let viewC = pageViewController.viewControllers?.first
         let identifier = viewC?.restorationIdentifier
         index = storyboardIds.index(of: identifier!)!
-        if index == 3 {
-            nextButton.isHidden = true
-        } else {
-            nextButton.isHidden = false
-        }
     }
-    
-    
+ 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
   
         if segue.identifier == "boardingDone" {
@@ -100,8 +109,4 @@ class PageShowerViewController: UIViewController, UIPageViewControllerDelegate, 
         
     }
     
-
-
-    
-
 }

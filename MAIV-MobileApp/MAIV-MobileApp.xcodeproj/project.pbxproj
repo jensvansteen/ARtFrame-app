@@ -20,7 +20,6 @@
 		333045F220CBA231001D4DAA /* OverVIewARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333045F120CBA231001D4DAA /* OverVIewARViewController.swift */; };
 		333045F420CBA276001D4DAA /* ARViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333045F320CBA276001D4DAA /* ARViewViewController.swift */; };
 		3330461620CBB4DA001D4DAA /* PullUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3330461520CBB4DA001D4DAA /* PullUpController.swift */; };
-		3330461820CBBA25001D4DAA /* InnerViewUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3330461720CBBA25001D4DAA /* InnerViewUIView.swift */; };
 		3330461A20CC0FE6001D4DAA /* ARScanInstructionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3330461920CC0FE6001D4DAA /* ARScanInstructionViewController.swift */; };
 		3330464220CCFEE7001D4DAA /* ContentAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3330464120CCFEE7001D4DAA /* ContentAPI.swift */; };
 		3330464620CD1140001D4DAA /* guideModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3330464520CD1140001D4DAA /* guideModel.swift */; };
@@ -59,7 +58,6 @@
 		333045F120CBA231001D4DAA /* OverVIewARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverVIewARViewController.swift; sourceTree = "<group>"; };
 		333045F320CBA276001D4DAA /* ARViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewViewController.swift; sourceTree = "<group>"; };
 		3330461520CBB4DA001D4DAA /* PullUpController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PullUpController.swift; sourceTree = "<group>"; };
-		3330461720CBBA25001D4DAA /* InnerViewUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InnerViewUIView.swift; sourceTree = "<group>"; };
 		3330461920CC0FE6001D4DAA /* ARScanInstructionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARScanInstructionViewController.swift; sourceTree = "<group>"; };
 		3330464120CCFEE7001D4DAA /* ContentAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentAPI.swift; sourceTree = "<group>"; };
 		3330464520CD1140001D4DAA /* guideModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = guideModel.swift; sourceTree = "<group>"; };
@@ -161,7 +159,6 @@
 				3330461520CBB4DA001D4DAA /* PullUpController.swift */,
 				333045F120CBA231001D4DAA /* OverVIewARViewController.swift */,
 				333045F320CBA276001D4DAA /* ARViewViewController.swift */,
-				3330461720CBBA25001D4DAA /* InnerViewUIView.swift */,
 				33C7417420CFAA0E00E25B54 /* QuestionUICollectionViewCell.swift */,
 			);
 			path = ARView;
@@ -388,7 +385,6 @@
 				333045D420C9CF06001D4DAA /* MapViewViewController.swift in Sources */,
 				3330E78F20D0DF6600B1F1BD /* GuideCollectionViewCell.swift in Sources */,
 				3330461A20CC0FE6001D4DAA /* ARScanInstructionViewController.swift in Sources */,
-				3330461820CBBA25001D4DAA /* InnerViewUIView.swift in Sources */,
 				335BD4D820CE6EA600DBB39E /* Model.xcdatamodeld in Sources */,
 				333045F220CBA231001D4DAA /* OverVIewARViewController.swift in Sources */,
 				333045D820CA4B9B001D4DAA /* tourModel.swift in Sources */,
