@@ -14,7 +14,7 @@ We came up with the idea to spread the art over the streets of Rotterdam in the 
 
 * __Rico Borghs:__ Concept, UI, UX, Motion
 
-    Rico is really creative person who always comes up with the most awesome and wicked ideas and concepts. He contributed with designing the app and making the really terrific motion videos for the AR part in the app.
+    Rico is really creative person who always comes up with the most awesome and wicked ideas and concepts. He contributed by designing the app and making the really terrific motion videos for the AR part in the app.
 
 * __Nicolas Nuytten:__ Concept, UI, UX, Web Development
 
