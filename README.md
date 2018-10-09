@@ -4,7 +4,7 @@ This app was made as part of a assignment for my study [Digital Design & Develop
 
 ## Assignment
 
-The museum "Boijmans van Beuningen" in Rotterdam has to close for serval years for renovation works. In team we had to found a solution so that people would still be able to expercience the museum in a digital way.
+The museum "Boijmans van Beuningen" in Rotterdam has to close for serval years for renovation works. In team we had to find a solution so that people would still be able to expercience the museum in a digital way.
 
 ### Solution
 
