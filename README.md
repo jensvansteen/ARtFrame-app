@@ -8,7 +8,7 @@ The museum "Boijmans van Beuningen" in Rotterdam has to close for serval years f
 
 ### Solution
 
-We came up with the idea to spread the art over the streets of Rotterdam in the form of empty frames. If you scanned the frame a living art work would show up in AR. You would also be able to than ask your assistant questions about the art work.
+We came up with the idea to spread the art over the streets of Rotterdam in the form of empty frames. If you scanned a frame a living art work would show up in AR. You would also be able to than ask your assistant questions about the art work.
 
 ### Team
 
