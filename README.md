@@ -32,7 +32,7 @@ We came up with the idea to spread the art over the streets of Rotterdam in the 
 
 ## App
 
-The making of the app was a real joy for me because I was able to deepen myself in something I real enjoy: 'making iOS Apps'. I used several technologies I haven't used before or had seen in the lectures.
+The making of the app was a real joy for me because I was able to deepen myself in something I real enjoy: making iOS Apps. I used several technologies I haven't used before or had seen in the lectures.
 
 __Used technologies__
 
