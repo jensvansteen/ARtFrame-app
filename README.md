@@ -10,6 +10,8 @@ The museum "Boijmans van Beuningen" in Rotterdam has to close several years for 
 
 We came up with the idea to spread the art over the streets of Rotterdam in the form of empty frames. If you scan a frame, a living art work shows up in AR. You would also be able to then ask your assistant questions about the art work.
 
+![frame](https://user-images.githubusercontent.com/33849126/46695705-95d35c00-cc10-11e8-8b6c-8159857213e1.jpg)
+
 ### Team
 
 * __Rico Borghs:__ Concept, UI, UX, Motion
@@ -43,3 +45,6 @@ __Used technologies__
 ### View the content in AR
 
 Once you are in scan mode you can try out a frame to scan like the one below.
+
+
+![p000011](https://user-images.githubusercontent.com/33849126/46695996-640ec500-cc11-11e8-84b4-484e3c9a25cb.jpg)
